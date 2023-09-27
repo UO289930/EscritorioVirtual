@@ -28,14 +28,22 @@
     </nav>
 
     <!-- Datos con el contenidos que aparece en el navegador -->
-    <h1>Sobre mi</h1>
-        <h2>Información personal</h2>
+    <h1>Escritorio Virtual</h1>
+        <h2>Sobre mi</h2>
+        <h3>Información personal</h3>
             <p>Nombre y apellidos: Sergio Truébano Robles</p>
             <p>Ciudad natal: Gijón, Asturias</p>
             <p>UO: 289930</p>
             <p>Correo electrónico: UO289930@uniovi.es</p>
 
-        <h2>Presentación</h2>
+        <picture>
+            <source media="(max-width: 465px)" srcset="multimedia/imagenes/yo-219w.png" />
+            <source media="(max-width: 799px)" srcset="multimedia/imagenes/yo-480w.png"/>
+            <source media="(min-width: 800px)" srcset="multimedia/imagenes/yo.png"/>
+            <img src="multimedia/imagenes/yo.png" alt="Foto personal"/>
+        </picture>
+
+        <h3>Presentación</h3>
             <p>
                 "Soy un aficionado a la informática que trata de acercar su realidad a la Web a través de un escritorio virtual"
             </p>
@@ -90,17 +98,17 @@
                 <p>Todas las asignaturas relaccionadas con mi grado se pueden ver en el <a href="https://sies.uniovi.es/ofe-pod-jsf/web/oferta/seccion-5.faces">plan de estudios</a> de la Universidad</p>
                 <dl>
                     <dt>Comunicación Persona Máquina</dt>
-                        <dd>-Interfaces en Java usnado Swing y aplicando: usabilidad, adaptabilidad y accesibilidad</dd>
+                        <dd>Interfaces en Java usnado Swing y aplicando: usabilidad, adaptabilidad y accesibilidad</dd>
                     <dt>Estructura de datos</dt>
-                        <dd>-Principales estructuras para almacenar datos y acceder a ellos de la manera más eficiente</dd>
+                        <dd>Principales estructuras para almacenar datos y acceder a ellos de la manera más eficiente</dd>
                     <dt>Fundamentos de Informática</dt>
-                        <dd>-Fundamentos de Software y programación usando Python</dd>
+                        <dd>Fundamentos de Software y programación usando Python</dd>
                     <dt>Metodología de la Programación</dt>
-                        <dd>Inicio a las metodología de la programación en Java, per aplicable a cualquier lenguaje de programación</dd>
+                        <dd>Inicio a las metodología de la programación en Java, pero aplicable a cualquier lenguaje de programación</dd>
                     <dt>Tecnologías y Paradigmas de la Programación</dt>
-                        <dd>-Principales características de los lenguajes de programación, así como distintos paradigmos: orientado a objetos, funcional...</dd>
+                        <dd>Principales características de los lenguajes de programación, así como distintos paradigmos: orientado a objetos, funcional...</dd>
                 </dl>
-        <h2>Tabla de temperaturas</h2>
+        <h3>Tabla de temperaturas</h3>
             <p>La siguiente tabla expresa la media de las temperaturas (en grados Celsius) en Gijón de los últimos 10 años:</p>
             <table id="temperaturas">
                 <caption>Tabla de temperaturas medias por meses desde 2013 en Gijón</caption>
