@@ -12,12 +12,14 @@
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 </head>
 
 <body>
 
-    <!--Menú de navegación-->
+    <!--Cabecera-->
     <header>
+        <h1>Escritorio Virtual</h1>
         <nav>
             <a href="index.html" accesskey="I" tabindex="1">Inicio</a>
             <a href="sobremi.html" accesskey="S" tabindex="2">Sobre mi</a>
@@ -28,26 +30,25 @@
             <a href="Juegos.html" accesskey="J" tabindex="7">Juegos</a>
         </nav>
     </header>
-
-    <!-- Datos con el contenidos que aparece en el navegador -->
-    <h1>Escritorio Virtual</h1>
+    
+    <!-- Datos con el contenidos que aparece en la sección principal -->
+    <main>
         <h2>Sobre mi</h2>
-        <h3>Información personal</h3>
+
             <p>Nombre y apellidos: Sergio Truébano Robles</p>
             <p>Ciudad natal: Gijón, Asturias</p>
             <p>UO: 289930</p>
             <p>Correo electrónico: UO289930@uniovi.es</p>
 
-        <picture>
-            <source media="(max-width: 465px)" srcset="multimedia/imagenes/yo-285w.png" />
-            <source media="(max-width: 799px)" srcset="multimedia/imagenes/yo-470w.png"/>
-            <source media="(min-width: 800px)" srcset="multimedia/imagenes/yo.png"/>
-            <img src="multimedia/imagenes/yo.png" alt="Foto personal"/>
-        </picture>
+            <picture>
+                <source media="(max-width: 465px)" srcset="multimedia/imagenes/yo-285w.png" />
+                <source media="(max-width: 799px)" srcset="multimedia/imagenes/yo-466w.png"/>
+                <source media="(min-width: 800px)" srcset="multimedia/imagenes/yo.png"/>
+                <img src="multimedia/imagenes/yo.png" alt="Foto personal"/>
+            </picture>
 
-        <h3>Presentación</h3>
             <p>
-                "Soy un aficionado a la informática que trata de acercar su realidad a la Web a través de un escritorio virtual"
+                Soy un aficionado a la informática que trata de acercar su realidad a la Web a través de un escritorio virtual
             </p>
             <p>
                 Bienvenidos a mi carta de presentación: Mi nombre es Sergio Truébano,
@@ -61,7 +62,7 @@
             </p>
 
             
-            <h4>Mis aficiones:</h4>
+            <h3>Aficiones</h3>
                 <ul>
                     <li>Informática</li>
                     <li>Aerodinámica</li>
@@ -69,7 +70,7 @@
                         <ol>
                             <li>Mecánica</li>
                             <li>Fórmula 1</li>
-                            <li lang="en">Rally</li>
+                            <li>Rally</li>
                         </ol>
                     </li>
                     <li>Videojuegos
@@ -82,14 +83,14 @@
                     <li>Realidad virtual</li>
                 </ul>
 
-                <h5>Rally Princesa de Asturias 2023</h5>
+                <p>A continuación, se muestra un vídeo del Rally Princesa de Asturias 2023:</p>
 
-                <video controls preload>
-                    <source src="multimedia/videos/rally.mp4" type="video/mp4">
-                    <source src="multimedia/videos/rally.ogg" type="video/ogg">
-                </video>
+                    <video controls preload>
+                        <source src="multimedia/videos/rally.mp4" type="video/mp4">
+                        <source src="multimedia/videos/rally.webm" type="video/webm">
+                    </video>
         
-            <h4>Cantantes o grupos musicales favoritos ordenados por preferencia personal:</h4>
+            <h3>Cantantes o grupos musicales favoritos ordenados por preferencia personal</h3>
                 
                 <ol>
                     <li>Andy & Lucas</li>
@@ -99,17 +100,16 @@
                     <li>Melendi</li>
                 </ol>
 
-                <h5>Andy & Lucas - Tanto la quería</h5>
+                <p>Foto del grupo Andy & Lucas:</p>
 
                 <picture>
                     <source media="(max-width: 465px)" srcset="multimedia/imagenes/andylucas-284w.png"/>
-                    <source media="(max-width: 799px)" srcset="multimedia/imagenes/andylucas-470w.png"/>
+                    <source media="(max-width: 799px)" srcset="multimedia/imagenes/andylucas-466w.png"/>
                     <source media="(min-width: 800px)" srcset="multimedia/imagenes/andylucas.png"/>
                     <img src="multimedia/imagenes/andylucas.png" alt="No se ha podido mostrar la foto de Andy & Lucas"/>
                 </picture>
 
-                <!--No se si está bien, pero no quiero que el audio esté al lado de la foto en pantallas grandes (ADAPTABILIDAD)-->
-                <br>
+                <p>Fragmento de la canción Tanto la quería del grupo musical Andy & Lucas:</p>
 
                 <audio controls> 
                     <source src="multimedia/audios/andylucas.mp3" type="audio/mp3">
@@ -118,8 +118,9 @@
                 </audio>
                 
             
-            <h4>Asignaturas que más me han gusatdo hasta ahora:</h4>
-                <p>Todas las asignaturas relaccionadas con mi grado se pueden ver en el <a href="https://sies.uniovi.es/ofe-pod-jsf/web/oferta/seccion-5.faces">plan de estudios</a> de la Universidad</p>
+            <h3>Asignaturas que más me han gusatdo hasta ahora del grado en Ingeniería Informática del Software</h3>
+                <p>Todas las asignaturas relaccionadas con mi grado se pueden ver en el 
+                    <a href="https://sies.uniovi.es/ofe-pod-jsf/web/oferta/seccion-5.faces">plan de estudios</a> de la Universidad de Oviedo</p>
                 <dl>
                     <dt>Comunicación Persona Máquina</dt>
                         <dd>Interfaces en Java usnado Swing y aplicando: usabilidad, adaptabilidad y accesibilidad</dd>
@@ -132,193 +133,63 @@
                     <dt>Tecnologías y Paradigmas de la Programación</dt>
                         <dd>Principales características de los lenguajes de programación, así como distintos paradigmos: orientado a objetos, funcional...</dd>
                 </dl>
-        <h3>Tabla de temperaturas</h3>
-            <p>La siguiente tabla expresa la media de las temperaturas (en grados Celsius) en Gijón de los últimos 10 años:</p>
-            <table id="temperaturas">
+    </main>
+    <aside>
+        <h2>Tabla de temperaturas</h2>
+            <p>La siguiente tabla expresa la media de las temperaturas (en grados Celsius) en Gijón durante los últimos 10 años:</p>
+            <table>
                 <caption>Tabla de temperaturas medias por meses desde 2013 en Gijón</caption>
                 <tr>
-                    <th id="año">Año</th> <!--Esquina superior izquierda -> Preguntar por scope-->
-
-                    <th scope="col" id="enero">Enero</th>
-                    <th scope="col" id="febrero">Febrero</th>
-                    <th scope="col" id="marzo">Marzo</th>
-                    <th scope="col" id="abril">Abril</th>
-                    <th scope="col" id="mayo">Mayo</th>
-                    <th scope="col" id="junio">Junio</th>
-                    <th scope="col" id="julio">Julio</th>
-                    <th scope="col" id="agosto">Agosto</th>
-                    <th scope="col" id="septiembre">Septiembre</th>
-                    <th scope="col" id="octubre">Octubre</th>
-                    <th scope="col" id="noviembre">Noviembre</th>
-                    <th scope="col" id="diciembre">Diciembre</th>
+                    <th scope="col" id="año">Año</th>
+                    <th scope="col" id="temperatura">Temperatura media</th>
+                </tr>
+                <tr>
+                    <th scope="row" id="2012" headers="año">2012</th>
+                        <td headers="2012 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2013" headers="año">2013</th>
-                        <td headers="2013 enero">11°</td>
-                        <td headers="2013 febrero">11°</td>
-                        <td headers="2013 marzo">12°</td>
-                        <td headers="2013 abril">13°</td>
-                        <td headers="2013 mayo">14°</td>
-                        <td headers="2013 junio">16°</td>
-                        <td headers="2013 julio">18°</td>
-                        <td headers="2013 agosto">19°</td>
-                        <td headers="2013 septiembre">18°</td>
-                        <td headers="2013 octubre">16°</td>
-                        <td headers="2013 noviembre">13°</td>
-                        <td headers="2013 diciembre">11°</td>
+                        <td headers="2013 temperatura">13</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2014" headers="año">2014</th>
-                        <td headers="2014 enero">11°</td>
-                        <td headers="2014 febrero">11°</td>
-                        <td headers="2014 marzo">12°</td>
-                        <td headers="2014 abril">13°</td>
-                        <td headers="2014 mayo">13°</td>
-                        <td headers="2014 junio">16°</td>
-                        <td headers="2014 julio">17°</td>
-                        <td headers="2014 agosto">18°</td>
-                        <td headers="2014 septiembre">17°</td>
-                        <td headers="2014 octubre">16°</td>
-                        <td headers="2014 noviembre">13°</td>
-                        <td headers="2014 diciembre">10°</td>
+                        <td headers="2014 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2015" headers="año">2015</th>
-                        <td headers="2015 enero">11°</td>
-                        <td headers="2015 febrero">10°</td>
-                        <td headers="2015 marzo">12°</td>
-                        <td headers="2015 abril">13°</td>
-                        <td headers="2015 mayo">15°</td>
-                        <td headers="2015 junio">17°</td>
-                        <td headers="2015 julio">18°</td>
-                        <td headers="2015 agosto">19°</td>
-                        <td headers="2015 septiembre">18°</td>
-                        <td headers="2015 octubre">15°</td>
-                        <td headers="2015 noviembre">13°</td>
-                        <td headers="2015 diciembre">12°</td>
+                        <td headers="2015 temperatura">13</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2016" headers="año">2016</th>
-                        <td headers="2016 enero">11°</td>
-                        <td headers="2016 febrero">11°</td>
-                        <td headers="2016 marzo">11°</td>
-                        <td headers="2016 abril">12°</td>
-                        <td headers="2016 mayo">13°</td>
-                        <td headers="2016 junio">14°</td>
-                        <td headers="2016 julio">16°</td>
-                        <td headers="2016 agosto">18°</td>
-                        <td headers="2016 septiembre">17°</td>
-                        <td headers="2016 octubre">15°</td>
-                        <td headers="2016 noviembre">13°</td>
-                        <td headers="2016 diciembre">11°</td>
+                        <td headers="2016 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2017" headers="año">2017</th>
-                        <td headers="2017 enero">11°</td>
-                        <td headers="2017 febrero">11°</td>
-                        <td headers="2017 marzo">12°</td>
-                        <td headers="2017 abril">13°</td>
-                        <td headers="2017 mayo">15°</td>
-                        <td headers="2017 junio">17°</td>
-                        <td headers="2017 julio">19°</td>
-                        <td headers="2017 agosto">17°</td>
-                        <td headers="2017 septiembre">16°</td>
-                        <td headers="2017 octubre">14°</td>
-                        <td headers="2017 noviembre">13°</td>
-                        <td headers="2017 diciembre">11°</td>
+                        <td headers="2017 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2018" headers="año">2018</th>
-                        <td headers="2018 enero">11°</td>
-                        <td headers="2018 febrero">11°</td>
-                        <td headers="2018 marzo">12°</td>
-                        <td headers="2018 abril">13°</td>
-                        <td headers="2018 mayo">14°</td>
-                        <td headers="2018 junio">16°</td>
-                        <td headers="2018 julio">18°</td>
-                        <td headers="2018 agosto">19°</td>
-                        <td headers="2018 septiembre">17°</td>
-                        <td headers="2018 octubre">15°</td>
-                        <td headers="2018 noviembre">13°</td>
-                        <td headers="2018 diciembre">12°</td>
+                        <td headers="2018 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2019" headers="año">2019</th>
-                        <td headers="2019 enero">7°</td>
-                        <td headers="2019 febrero">10°</td>
-                        <td headers="2019 marzo">11°</td>
-                        <td headers="2019 abril">12°</td>
-                        <td headers="2019 mayo">14°</td>
-                        <td headers="2019 junio">16°</td>
-                        <td headers="2019 julio">17°</td>
-                        <td headers="2019 agosto">19°</td>
-                        <td headers="2019 septiembre">17°</td>
-                        <td headers="2019 octubre">16°</td>
-                        <td headers="2019 noviembre">14°</td>
-                        <td headers="2019 diciembre">12°</td>
+                        <td headers="2019 temperatura">12</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2020" headers="año">2020</th>
-                        <td headers="2020 enero">11°</td>
-                        <td headers="2020 febrero">11°</td>
-                        <td headers="2020 marzo">12°</td>
-                        <td headers="2020 abril">13°</td>
-                        <td headers="2020 mayo">15°</td>
-                        <td headers="2020 junio">16°</td>
-                        <td headers="2020 julio">18°</td>
-                        <td headers="2020 agosto">20°</td>
-                        <td headers="2020 septiembre">17°</td>
-                        <td headers="2020 octubre">15°</td>
-                        <td headers="2020 noviembre">14°</td>
-                        <td headers="2020 diciembre">11°</td>
+                        <td headers="2020 temperatura">13</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2021" headers="año">2021</th>
-                        <td headers="2021 enero">9°</td>
-                        <td headers="2021 febrero">12°</td>
-                        <td headers="2021 marzo">12°</td>
-                        <td headers="2021 abril">13°</td>
-                        <td headers="2021 mayo">15°</td>
-                        <td headers="2021 junio">16°</td>
-                        <td headers="2021 julio">18°</td>
-                        <td headers="2021 agosto">20°</td>
-                        <td headers="2021 septiembre">17°</td>
-                        <td headers="2021 octubre">15°</td>
-                        <td headers="2021 noviembre">13°</td>
-                        <td headers="2021 diciembre">12°</td>
+                        <td headers="2021 temperatura">13</td>
                 </tr>
                 <tr>
                     <th scope="row" id="2022" headers="año">2022</th>
-                        <td headers="2022 enero">11°</td>
-                        <td headers="2022 febrero">10°</td>
-                        <td headers="2022 marzo">12°</td>
-                        <td headers="2022 abril">13°</td>
-                        <td headers="2022 mayo">14°</td>
-                        <td headers="2022 junio">16°</td>
-                        <td headers="2022 julio">19°</td>
-                        <td headers="2022 agosto">20°</td>
-                        <td headers="2022 septiembre">18°</td>
-                        <td headers="2022 octubre">17°</td>
-                        <td headers="2022 noviembre">14°</td>
-                        <td headers="2022 diciembre">12°</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2023" headers="año">2023</th>
-                        <td headers="2023 enero">10°</td>
-                        <td headers="2023 febrero">11°</td>
-                        <td headers="2023 marzo">12°</td>
-                        <td headers="2023 abril">13°</td>
-                        <td headers="2023 mayo">15°</td>
-                        <td headers="2023 junio">17°</td>
-                        <td headers="2023 julio">19°</td>
-                        <td headers="2023 agosto">22°</td>
-                        <td headers="2023 septiembre">21°</td>
-                        <td headers="2023 octubre">X</td>
-                        <td headers="2023 noviembre">X</td>
-                        <td headers="2023 diciembre">X</td>
+                        <td headers="2022 temperatura">13</td>
                 </tr>
             </table>
 
-            <p>Información extraída de la siguiente página Web: <a href="https://es.weatherspark.com/h/y/34995/2023/Datos-hist%C3%B3ricos-meteorol%C3%B3gicos-de-2023-en-Gij%C3%B3n-Espa%C3%B1a#Figures-Temperature">es.weatherspark.es</a></p>
+            <p>Información extraída de la siguiente página Web: <a href="https://es.weatherspark.com/h/y/34995  /2023/Datos-hist%C3%B3ricos-meteorol%C3%B3gicos-de-2023-en-Gij%C3%B3n-Espa%C3%B1a#Figures-Temperature">es.weatherspark.es</a></p>
+    </aside>            
 </body>
 </html>
