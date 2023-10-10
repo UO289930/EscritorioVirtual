@@ -6,13 +6,13 @@
     <meta charset="UTF-8" />
     <meta name ="author" content ="Sergio Truébano Robles" />
     <meta name ="description" content ="Información personal sobre el autor de la página Web" />
-    <meta name ="keywords" content ="escritorio virtual, personal, informática" />
+    <meta name ="keywords" content ="escritorio virtual, personal, informática, " />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <title>Escritorio Virtual - Sobre mi</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="icon" href="multimedia/imagenes/favicon.ico">
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
 </head>
 
 <body>
@@ -27,169 +27,178 @@
             <a href="agenda.html" accesskey="A" tabindex="4">Agenda</a>
             <a href="meteorologia.html" accesskey="M" tabindex="5">Meteorología</a>
             <a href="viajes.html" accesskey="V" tabindex="6">Viajes</a>
-            <a href="Juegos.html" accesskey="J" tabindex="7">Juegos</a>
+            <a href="juegos.html" accesskey="J" tabindex="7">Juegos</a>
         </nav>
     </header>
     
     <!-- Datos con el contenidos que aparece en la sección principal -->
-    <main>
+    <!--<main> : Todavía no tiene sentido porque no sabemos el contexto del sitio web que diferencia esta parte del resto de partes del sitio web-->
         <h2>Sobre mi</h2>
+            <section>
+                <h3>Datos personales</h3>
+                    <p>Nombre y apellidos: Sergio Truébano Robles</p>
+                    <p>Ciudad natal: Gijón, Asturias</p>
+                    <p>UO: 289930</p>
+                    <p>Correo electrónico: UO289930@uniovi.es</p>
 
-            <p>Nombre y apellidos: Sergio Truébano Robles</p>
-            <p>Ciudad natal: Gijón, Asturias</p>
-            <p>UO: 289930</p>
-            <p>Correo electrónico: UO289930@uniovi.es</p>
+                    <picture>
+                        <source media="(max-width: 465px)" srcset="multimedia/imagenes/yo-285w.png"/>
+                        <source media="(max-width: 799px)" srcset="multimedia/imagenes/yo-466w.png"/>
+                        <source media="(min-width: 800px)" srcset="multimedia/imagenes/yo.png"/>
+                        <img src="multimedia/imagenes/yo.png" alt="Foto personal"/>
+                    </picture>
 
-            <picture>
-                <source media="(max-width: 465px)" srcset="multimedia/imagenes/yo-285w.png" />
-                <source media="(max-width: 799px)" srcset="multimedia/imagenes/yo-466w.png"/>
-                <source media="(min-width: 800px)" srcset="multimedia/imagenes/yo.png"/>
-                <img src="multimedia/imagenes/yo.png" alt="Foto personal"/>
-            </picture>
+                    <p>
+                        Soy un aficionado a la informática que trata de acercar su realidad a la Web a través de un escritorio virtual.
+                    </p>
+                    <p>
+                        Bienvenidos a mi carta de presentación: Mi nombre es Sergio Truébano,
+                        soy un estudiante del tercer curso de <a href="https://ingenieriainformatica.uniovi.es/infoacademica/grado">Ingeniería Informática del Software</a> en <a href="https://www.uniovi.es">Universidad de Oviedo</a>.
+                    </p>
+                    <p>
+                        Me considero una persona agradecida y entusiasta, con ganas de trabajar y de sacar mis proyectos adelante.
 
-            <p>
-                Soy un aficionado a la informática que trata de acercar su realidad a la Web a través de un escritorio virtual
-            </p>
-            <p>
-                Bienvenidos a mi carta de presentación: Mi nombre es Sergio Truébano,
-                soy un estudiante del tercer curso de <a href="https://ingenieriainformatica.uniovi.es/infoacademica/grado">Ingeniería Informática del Software</a> en <a href="https://www.uniovi.es">Universidad de Oviedo</a>.
-            </p>
-            <p>
-                Me considero una persona agradecida y entusiasta, con ganas de trabajar y de sacar mis proyectos adelante.
-
-                Soy muy aficionado a los coches, tanto de calle como deportivos o de carreras, así como el estudio de los componentes usados para
-                el mismo y la implicación de este uso en el rendimiento y la aerodinámica del coche.
-            </p>
-
+                        Soy muy aficionado a los coches, tanto de calle como deportivos o de carreras, así como el estudio de los componentes usados para
+                        el mismo y la implicación de este uso en el rendimiento y la aerodinámica del coche.
+                    </p>
+            </section>
             
-            <h3>Aficiones</h3>
-                <ul>
-                    <li>Informática</li>
-                    <li>Aerodinámica</li>
-                    <li>Coches
-                        <ol>
-                            <li>Mecánica</li>
-                            <li>Fórmula 1</li>
-                            <li>Rally</li>
-                        </ol>
-                    </li>
-                    <li>Videojuegos
-                        <ul>
-                            <li>Automoción</li>
-                            <li lang="en">Shooter</li>
-                            <li>Supervivencia</li>
-                        </ul>
-                    </li>
-                    <li>Realidad virtual</li>
-                </ul>
+            <section>
+                <h3>Aficiones</h3>
+                    <ul>
+                        <li>Informática</li>
+                        <li>Aerodinámica</li>
+                        <li>Coches
+                            <ol>
+                                <li>Mecánica</li>
+                                <li>Fórmula 1</li>
+                                <li>Rally</li>
+                            </ol>
+                        </li>
+                        <li>Videojuegos
+                            <ul>
+                                <li>Automoción</li>
+                                <li lang="en">Shooter</li>
+                                <li>Supervivencia</li>
+                            </ul>
+                        </li>
+                        <li>Realidad virtual</li>
+                    </ul>
 
-                <p>A continuación, se muestra un vídeo del Rally Princesa de Asturias 2023:</p>
+                    <p>A continuación, se muestra un vídeo del Rally Princesa de Asturias 2023:</p>
 
-                    <video controls preload>
-                        <source src="multimedia/videos/rally.mp4" type="video/mp4">
-                        <source src="multimedia/videos/rally.webm" type="video/webm">
-                    </video>
+                        <video controls preload>
+                            <source src="multimedia/videos/rally.mp4" type="video/mp4">
+                            <source src="multimedia/videos/rally.webm" type="video/webm">
+                        </video>
+            </section>
         
-            <h3>Cantantes o grupos musicales favoritos ordenados por preferencia personal</h3>
-                
-                <ol>
-                    <li>Andy & Lucas</li>
-                    <li>Estopa</li>
-                    <li>Miguel Campello</li>
-                    <li>Joaquín Sabina</li>
-                    <li>Melendi</li>
-                </ol>
+            <section>
+                <h3>Cantantes o grupos musicales favoritos ordenados por preferencia personal</h3>
+                    
+                    <ol>
+                        <li>Andy & Lucas</li>
+                        <li>Estopa</li>
+                        <li>Miguel Campello</li>
+                        <li>Joaquín Sabina</li>
+                        <li>Melendi</li>
+                    </ol>
 
-                <p>Foto del grupo Andy & Lucas:</p>
+                    <p>Foto del grupo Andy & Lucas:</p>
 
-                <picture>
-                    <source media="(max-width: 465px)" srcset="multimedia/imagenes/andylucas-284w.png"/>
-                    <source media="(max-width: 799px)" srcset="multimedia/imagenes/andylucas-466w.png"/>
-                    <source media="(min-width: 800px)" srcset="multimedia/imagenes/andylucas.png"/>
-                    <img src="multimedia/imagenes/andylucas.png" alt="No se ha podido mostrar la foto de Andy & Lucas"/>
-                </picture>
+                    <picture>
+                        <source media="(max-width: 465px)" srcset="multimedia/imagenes/andylucas-284w.png"/>
+                        <source media="(max-width: 799px)" srcset="multimedia/imagenes/andylucas-466w.png"/>
+                        <source media="(min-width: 800px)" srcset="multimedia/imagenes/andylucas.png"/>
+                        <img src="multimedia/imagenes/andylucas.png" alt="No se ha podido mostrar la foto de Andy & Lucas"/>
+                    </picture>
 
-                <p>Fragmento de la canción Tanto la quería del grupo musical Andy & Lucas:</p>
+                    <p>Fragmento de la canción Tanto la quería del grupo musical Andy & Lucas:</p>
 
-                <audio controls> 
-                    <source src="multimedia/audios/andylucas.mp3" type="audio/mp3">
-                    <source src="multimedia/audios/andylucas.wav" type="audio/wav">
-                    <source src="multimedia/audios/andylucas.ogg" type="audio/ogg">
-                </audio>
-                
+                    <audio controls> 
+                        <source src="multimedia/audios/andylucas.mp3" type="audio/mp3">
+                        <source src="multimedia/audios/andylucas.wav" type="audio/wav">
+                        <source src="multimedia/audios/andylucas.ogg" type="audio/ogg">
+                    </audio>
+            </section>
             
-            <h3>Asignaturas que más me han gusatdo hasta ahora del grado en Ingeniería Informática del Software</h3>
-                <p>Todas las asignaturas relaccionadas con mi grado se pueden ver en el 
-                    <a href="https://sies.uniovi.es/ofe-pod-jsf/web/oferta/seccion-5.faces">plan de estudios</a> de la Universidad de Oviedo</p>
-                <dl>
-                    <dt>Comunicación Persona Máquina</dt>
-                        <dd>Interfaces en Java usnado Swing y aplicando: usabilidad, adaptabilidad y accesibilidad</dd>
-                    <dt>Estructura de datos</dt>
-                        <dd>Principales estructuras para almacenar datos y acceder a ellos de la manera más eficiente</dd>
-                    <dt>Fundamentos de Informática</dt>
-                        <dd>Fundamentos de Software y programación usando Python</dd>
-                    <dt>Metodología de la Programación</dt>
-                        <dd>Inicio a las metodología de la programación en Java, pero aplicable a cualquier lenguaje de programación</dd>
-                    <dt>Tecnologías y Paradigmas de la Programación</dt>
-                        <dd>Principales características de los lenguajes de programación, así como distintos paradigmos: orientado a objetos, funcional...</dd>
-                </dl>
-    </main>
+            <section>
+                <h3>Asignaturas que más me han gusatdo hasta ahora del grado en Ingeniería Informática del Software</h3>
+                    <p>Todas las asignaturas relaccionadas con mi grado se pueden ver en el 
+                        <a href="https://sies.uniovi.es/ofe-pod-jsf/web/oferta/seccion-5.faces">plan de estudios</a> de la Universidad de Oviedo</p>
+                    <dl>
+                        <dt>Comunicación Persona Máquina</dt>
+                            <dd>Interfaces en Java usando Swing y aplicando: usabilidad, adaptabilidad y accesibilidad</dd>
+                        <dt>Estructura de datos</dt>
+                            <dd>Principales estructuras para almacenar datos y acceder a ellos de la manera más eficiente</dd>
+                        <dt>Fundamentos de Informática</dt>
+                            <dd>Fundamentos de Software y programación usando Python</dd>
+                        <dt>Metodología de la Programación</dt>
+                            <dd>Inicio a las metodología de la programación en Java, pero aplicable a cualquier lenguaje de programación</dd>
+                        <dt>Tecnologías y Paradigmas de la Programación</dt>
+                            <dd>Principales características de los lenguajes de programación, así como distintos paradigmos: orientado a objetos, funcional...</dd>
+                    </dl>
+            </section>
+    <!--</main>-->
     <aside>
-        <h2>Tabla de temperaturas</h2>
-            <p>La siguiente tabla expresa la media de las temperaturas (en grados Celsius) en Gijón durante los últimos 10 años:</p>
-            <table>
-                <caption>Tabla de temperaturas medias por meses desde 2013 en Gijón</caption>
-                <tr>
-                    <th scope="col" id="año">Año</th>
-                    <th scope="col" id="temperatura">Temperatura media</th>
-                </tr>
-                <tr>
-                    <th scope="row" id="2012" headers="año">2012</th>
-                        <td headers="2012 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2013" headers="año">2013</th>
-                        <td headers="2013 temperatura">13</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2014" headers="año">2014</th>
-                        <td headers="2014 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2015" headers="año">2015</th>
-                        <td headers="2015 temperatura">13</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2016" headers="año">2016</th>
-                        <td headers="2016 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2017" headers="año">2017</th>
-                        <td headers="2017 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2018" headers="año">2018</th>
-                        <td headers="2018 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2019" headers="año">2019</th>
-                        <td headers="2019 temperatura">12</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2020" headers="año">2020</th>
-                        <td headers="2020 temperatura">13</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2021" headers="año">2021</th>
-                        <td headers="2021 temperatura">13</td>
-                </tr>
-                <tr>
-                    <th scope="row" id="2022" headers="año">2022</th>
-                        <td headers="2022 temperatura">13</td>
-                </tr>
-            </table>
+        <!--La sección de tabla podría ser copiada y pegada a, por ejemplo, meteorología.html y sigue teniendo sentido por sí sola -->
+        <article>
+            <h2>Tabla de temperaturas</h2>
+                <p>La siguiente tabla expresa la media de las temperaturas (en grados Celsius) en Gijón durante los últimos 10 años:</p>
+                <table>
+                    <caption>Tabla de temperaturas medias por meses desde 2013 hasta 2022 en Gijón</caption>
+                    <tr>
+                        <th scope="col" id="año">Año</th>
+                        <th scope="col" id="temperatura">Temperatura media</th>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2012" headers="año">2012</th>
+                            <td headers="2012 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2013" headers="año">2013</th>
+                            <td headers="2013 temperatura">13</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2014" headers="año">2014</th>
+                            <td headers="2014 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2015" headers="año">2015</th>
+                            <td headers="2015 temperatura">13</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2016" headers="año">2016</th>
+                            <td headers="2016 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2017" headers="año">2017</th>
+                            <td headers="2017 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2018" headers="año">2018</th>
+                            <td headers="2018 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2019" headers="año">2019</th>
+                            <td headers="2019 temperatura">12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2020" headers="año">2020</th>
+                            <td headers="2020 temperatura">13</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2021" headers="año">2021</th>
+                            <td headers="2021 temperatura">13</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="2022" headers="año">2022</th>
+                            <td headers="2022 temperatura">13</td>
+                    </tr>
+                </table>
 
-            <p>Información extraída de la siguiente página Web: <a href="https://es.weatherspark.com/h/y/34995  /2023/Datos-hist%C3%B3ricos-meteorol%C3%B3gicos-de-2023-en-Gij%C3%B3n-Espa%C3%B1a#Figures-Temperature">es.weatherspark.es</a></p>
+                <p>Información extraída de la siguiente página Web: <a href="https://es.weatherspark.com/h/y/34995/2023/Datos-hist%C3%B3ricos-meteorol%C3%B3gicos-de-2023-en-Gij%C3%B3n-Espa%C3%B1a#Figures-Temperature">es.weatherspark.es</a></p>
+        </article>
     </aside>            
 </body>
 </html>
