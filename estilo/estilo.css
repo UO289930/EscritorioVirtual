@@ -1,1 +1,52 @@
 /*Sergio Truébano Robles*/
+/*
+Colores: 
+(Main: https://www.canva.com/colors/color-palettes/gingerbread-ice-cream/)
+(Sec: https://www.canva.com/colors/color-palettes/stairs-and-mirrors/)
+
+Beige oscuro -> background
+#574433
+
+Cream -> foreground
+#F9F6F0
+
+Beige claro
+#C4AE78
+
+Black
+#171515
+*/
+/*Especifidad: 001*/
+body{
+    font-family: "Trebuche MS", Verdana, Tahoma, sans-serif ;
+}
+/*Especifidad: 001*/
+header{
+    background-color: #574433;
+    color: #000000;
+    border: 0em;
+}
+/*Especifidad: 002*/
+header>nav{
+    font-size: 1.2em;
+}
+/*Especifidad: 002*/
+header>h1{
+    font-size: 4.5em;    
+}
+/*Especifidad: 001*/
+body{
+
+}
+/*Especifidad: 002*/
+body h2{
+    font-size: 3em;
+}
+/*Especifidad: 002*/
+body h3{
+    font-size: 2.5em;
+}
+/*Especifidad: 002*/
+aside>h2{
+    font-size: 2.75;
+}
