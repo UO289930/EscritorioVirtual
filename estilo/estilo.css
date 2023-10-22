@@ -4,49 +4,130 @@ Colores:
 (Main: https://www.canva.com/colors/color-palettes/gingerbread-ice-cream/)
 (Sec: https://www.canva.com/colors/color-palettes/stairs-and-mirrors/)
 
-Beige oscuro -> background
-#574433
+Baby Blue
+#68BBE3
 
-Cream -> foreground
-#F9F6F0
+Blue Grotto
+#0E86D4
 
-Beige claro
-#C4AE78
+Blue
+#075997
 
-Black
-#171515
+Navy Blue
+#00264D
+
+Blank
+#FFFFFF
+
+-----
+EXTRA
+-----
+
+Amarillo
+#EFD41F
+
+Morado
+#2D0674
+
+Salmon
+#F99F9F
+
+Gris
+#B5B5B5
+
 */
 /*Especifidad: 001*/
 body{
     font-family: "Trebuche MS", Verdana, Tahoma, sans-serif ;
+    background-color: #68BBE3;
+    color: #000000;
+    font-size: 1em;
 }
 /*Especifidad: 001*/
 header{
-    background-color: #574433;
-    color: #000000;
-    border: 0em;
+    background-color: #00264D;
+    color: #FFFFFF;
 }
+/*Especifidad: 001*/
+video{
+    width: 80%;
+    height: auto;
+    padding: 2em 5em 2em 4.5em;
+}
+/*Especifidad: 001*/
+img{
+    width: 80%;
+    height: auto;
+    padding: 2em 5em 2em 4.5em;
+}
+/* Especifidad: 002 */
+tr>th{
+    color:#FFFFFF;
+    background-color: #00264D;
+}
+/* Especifidad: 002 */
+tr>td{
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/* Especifidad: 002 */
+header>h1{
+    /*Hereda background-color de header*/
+    font-size: 2.3em;    
+} 
 /*Especifidad: 002*/
-header>nav{
+ header>nav{
+    /*Hereda background-color de header*/
     font-size: 1.2em;
 }
 /*Especifidad: 002*/
-header>h1{
-    font-size: 4.5em;    
-}
-/*Especifidad: 001*/
-body{
-
-}
-/*Especifidad: 002*/
 body h2{
-    font-size: 3em;
+    font-size: 2em;
 }
 /*Especifidad: 002*/
 body h3{
-    font-size: 2.5em;
+    font-size: 1.75em;
 }
-/*Especifidad: 002*/
-aside>h2{
-    font-size: 2.75;
+/*Especifidad: 003*/
+body section ul{
+    list-style-type: square;
 }
+/*Especificidad: 003*/
+body section ol{
+    list-style-type: upper-roman;
+}
+/*Especificidad: 003*/
+ul>li>ol{
+    list-style-type: lower-roman;
+}
+dl>dt>dd{
+    /*Se hereda de body ambas*/
+    color: #2D0674;
+    font-size: 1.1em;
+}
+/*Especifidad: 013*/
+section>ul>li:nth-child(3){
+    /*Se hereda de body */
+    color: #2D0674;
+}
+/*Especifidad: 013*/
+header>nav a:link{
+    /*Se hereda de body */
+    color: #EFD41F;
+}
+/*Especifidad: 013*/
+header>nav a:hover{
+    /*Se hereda de body */
+    color: #F99F9F;
+}
+/*Especifidad: 013*/
+header>nav a:focus{
+    /*Se hereda de body */
+    color: #F99F9F;
+}
+/*Especifidad: 013*/
+header>nav a:visited{
+    /*Se hereda de body */
+    color: #B5B5B5;
+}
+
