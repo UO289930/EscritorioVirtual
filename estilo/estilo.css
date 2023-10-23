@@ -52,13 +52,13 @@ header{
 video{
     width: 80%;
     height: auto;
-    padding: 2em 5em 2em 4.5em;
+    padding: 1em 5em 2em 2em;
 }
 /*Especifidad: 001*/
 img{
     width: 80%;
     height: auto;
-    padding: 2em 5em 2em 4.5em;
+    padding: 1em 5em 2em 2em;
 }
 /* Especifidad: 002 */
 tr>th{
@@ -68,16 +68,15 @@ tr>th{
 /* Especifidad: 002 */
 tr>td{
     text-align: center;
+    /* Color heredado de body */
     background-color: #FFFFFF;
 }
 /* Especifidad: 002 */
 header>h1{
-    /*Hereda background-color de header*/
     font-size: 2.3em;    
 } 
 /*Especifidad: 002*/
  header>nav{
-    /*Hereda background-color de header*/
     font-size: 1.2em;
 }
 /*Especifidad: 002*/
@@ -101,33 +100,33 @@ ul>li>ol{
     list-style-type: lower-roman;
 }
 dl>dt>dd{
-    /*Se hereda de body ambas*/
+    /* Color de fondo heredado de body */
     color: #2D0674;
     font-size: 1.1em;
 }
 /*Especifidad: 013*/
 section>ul>li:nth-child(3){
-    /*Se hereda de body */
+    /* Color de fondo heredado de body */
     color: #2D0674;
 }
 /*Especifidad: 013*/
 header>nav a:link{
-    /*Se hereda de body */
+    /* Color de fondo heredado de body */
     color: #EFD41F;
 }
 /*Especifidad: 013*/
 header>nav a:hover{
-    /*Se hereda de body */
+    /* Color de fondo heredado de body */
     color: #F99F9F;
 }
 /*Especifidad: 013*/
 header>nav a:focus{
-    /*Se hereda de body */
+    /* Color de fondo heredado de body */
     color: #F99F9F;
 }
 /*Especifidad: 013*/
 header>nav a:visited{
-    /*Se hereda de body */
+    /* Color de fondo heredado de body */
     color: #B5B5B5;
 }
 
