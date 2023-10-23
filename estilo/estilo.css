@@ -95,11 +95,12 @@ body section ul{
 body section ol{
     list-style-type: upper-roman;
 }
-/*Especificidad: 003*/
-ul>li>ol{
+/*Especificidad: 004*/
+body ul>li>ol{
     list-style-type: lower-roman;
 }
-dl>dt>dd{
+/*Especificidad: 004*/
+body dl>dt>dd{
     /* Color de fondo heredado de body */
     color: #2D0674;
     font-size: 1.1em;
