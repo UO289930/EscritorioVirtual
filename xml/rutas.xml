@@ -8,17 +8,11 @@
         <adecuado>Se puede ir con niños</adecuado>
         <lugarInicio>Pantai Seri Kenangan</lugarInicio>
         <direccionInicio>625, Jalan Kuala Tutong, Kampong Kuala Tutong, Brunei, Tutong TA3341, Brunéi</direccionInicio>
-        <coordenadasRuta altitud="200" latitud="4.197431" longitud="114.043168">Inicio de la ruta</coordenadasRuta>
+        <coordenadasRuta altitud="0" latitud="4.197431" longitud="114.043168">Inicio de la ruta</coordenadasRuta>
         <referencias>
-            <referencia>
-                Referencia 1: https://es.wikipedia.org/wiki/Geograf%C3%ADa_de_Brun%C3%A9i
-            </referencia>
-            <referencia>
-                Referencia 2: https://es.wikiloc.com/rutas/a-pie/brunei
-            </referencia>
-            <referencia>
-                Referencia 3: https://www.tripadvisor.es/Attraction_Review-g3135192-d447284-Reviews-Pantai_Seri_Kenangan-Tutong_Tutong_District.html
-            </referencia>
+            <referencia>https://es.wikipedia.org/wiki/Geograf%C3%ADa_de_Brun%C3%A9i</referencia>
+            <referencia>https://es.wikiloc.com/rutas/a-pie/brunei</referencia>
+            <referencia>https://www.tripadvisor.es/Attraction_Review-g3135192-d447284-Reviews-Pantai_Seri_Kenangan-Tutong_Tutong_District.html</referencia>
         </referencias>
         <recomendacion>8</recomendacion>
         <hitos>
@@ -28,7 +22,8 @@
                 <coordenadasHito altitud="0" longitud="4.790276596834284" latitud="114.61899278378765">Coordenadas Kampong Penabai</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">2.5</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>KualaTotongMosque.jpg</foto>
+                    <foto>KualaTotongMosque2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -37,7 +32,8 @@
                 <coordenadasHito altitud="0" longitud="4.807468110763295" latitud="114.63856073741455">Coordenadas Istana Pantai</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">2.9</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>IstanaPantai.jpg</foto>
+                    <foto>IstanaPantai2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -46,7 +42,7 @@
                 <coordenadasHito altitud="0" longitud="4.804738014211636" latitud="114.64495983293868">Coordenadas Istana Pantai</coordenadasHito>
                 <distanciaHitoAnterior unidades="m">850</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>fujiwara.jpg</foto>
                 </galeriaFotos>
             </hito>
         </hitos>
@@ -60,15 +56,9 @@
         <direccionInicio>Simpang 127, Bandar Seri Begawan, Brunéi</direccionInicio>
         <coordenadasRuta altitud="50" latitud="4.89795093169754" longitud="114.92168727801855">Inicio de la ruta</coordenadasRuta>
         <referencias>
-            <referencia>
-                Referencia 1: ...
-            </referencia>
-            <referencia>
-                Referencia 2: ...
-            </referencia>
-            <referencia>
-                Referencia 3: ...
-            </referencia>
+            <referencia>https://id.wikipedia.org/wiki/Jame%27_%27Asr_Hassanil_Bolkiah</referencia>
+            <referencia>https://www.visitsoutheastasia.travel/top-sights/jame-asr-hassanil-bolkiah-mosque/</referencia>
+            <referencia>https://www.flickr.com/photos/jlascar/18404307540</referencia>
         </referencias>
         <recomendacion>10</recomendacion>
         <hitos>
@@ -78,7 +68,8 @@
                 <coordenadasHito altitud="50" longitud="114.92168727801855" latitud="4.89795093169754">Coordenadas Masjid Jame' Asr Hassanil Bolkiah</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">0</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto 1: </foto>
+                    <foto>MasjidJame.jpg</foto>
+                    <foto>MasjidJame2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -87,7 +78,8 @@
                 <coordenadasHito altitud="50" longitud="114.93923818155807" latitud="4.889449185213048">Coordenadas Masjid Jame' Asr Hassanil Bolkiah</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">3.3</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto 1: </foto>
+                    <foto>SultanOmarAli.jpg</foto>
+                    <foto>SultanOmarAli2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -96,7 +88,7 @@
                 <coordenadasHito altitud="50" longitud="114.94441376981506" latitud="4.901602526126973">Coordenadas Masjid Jame' Asr Hassanil Bolkiah</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">5.5</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto 1: </foto>
+                    <foto>BalaiIbadat.jpg</foto>
                 </galeriaFotos>
             </hito>
 
@@ -111,15 +103,9 @@
         <direccionInicio>HHR3+5P5 Kargo Dam, Bang Bingol, Brunéi</direccionInicio>
         <coordenadasRuta altitud="200" latitud="4.5916878965355155" longitud="114.55407735158468">Inicio de la ruta</coordenadasRuta>
         <referencias>
-            <referencia>
-                Referencia 1: https://www.holidify.com/places/brunei/andulau-forest-reserve-sightseeing-1256132.html
-            </referencia>
-            <referencia>
-                Referencia 2: https://en.wikipedia.org/wiki/Lalak_Lake
-            </referencia>
-            <referencia>
-                Referencia 3: https://www.bruneitourism.com/bruneiplaces/luagan-lalak-recreation-park/
-            </referencia>
+            <referencia>https://www.asonicassociates.com/portfolio-item/rehabilitation-of-kargo-dam-jaji-kaduna-state/</referencia>
+            <referencia>https://en.wikipedia.org/wiki/Lalak_Lake</referencia>
+            <referencia>https://www.bruneitourism.com/bruneiplaces/luagan-lalak-recreation-park/</referencia>
         </referencias>
         <recomendacion>7</recomendacion>
         <hitos>
@@ -129,7 +115,7 @@
                 <coordenadasHito altitud="200" latitud="4.5916878965355155" longitud="114.55407735158468">Coordenadas Kargo Dam</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">0</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>KargoDam.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -138,7 +124,7 @@
                 <coordenadasHito altitud="200" latitud="4.553491810192945" longitud="114.49034991825599">Coordenadas Taman Rekreasi Sg.Mau</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">12.2</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>TamanRekreasi.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -147,7 +133,8 @@
                 <coordenadasHito altitud="200" latitud="4.515360715730574" longitud="114.47529147481819">Coordenadas Lalak Lake National Park</coordenadasHito>
                 <distanciaHitoAnterior unidades="km">6.6</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>Foto: </foto>
+                    <foto>LalakLake.jpg</foto>
+                    <foto>LalakLake2.jpg</foto>
                 </galeriaFotos>
             </hito>
         </hitos>

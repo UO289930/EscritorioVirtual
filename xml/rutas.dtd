@@ -22,7 +22,7 @@
 <!ELEMENT referencia (#PCDATA)>
 <!ELEMENT recomendacion (#PCDATA)>
 <!ELEMENT hitos (hito+)>
-<!ELEMENT hito (nombreHito,descripcionHito,coordenadasHito,distanciaHitoAnterior,galeriaFotos,galeriaVideos*)>
+<!ELEMENT hito (nombreHito,descripcionHito,coordenadasHito,distanciaHitoAnterior,galeriaFotos,galeriaVideos?)>
 <!ELEMENT nombreHito (#PCDATA)>
 <!ELEMENT descripcionHito (#PCDATA)>
 <!ELEMENT coordenadasHito (#PCDATA)>

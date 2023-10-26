@@ -15,10 +15,9 @@ nav ul>li{
 /*Especifidad: 003*/
 header>nav>ul {
     display: flex;
-    flex-wrap: wrap;
 }
 
-@media screen and (min-width: 45em) {
+@media (min-width: 50em) {
     /*Especifidad: 001*/
     header{
         /*Redifinición de dirección de h1 y nav a vertical*/
@@ -30,7 +29,7 @@ header>nav>ul {
         flex-direction: row;
     }
 }
-@media screen and (max-width: 45em) {
+@media (max-width: 50em) {
     /*Especifidad: 001*/
     header{
         /*Redifinición de dirección de h1 y nav a vertical*/
