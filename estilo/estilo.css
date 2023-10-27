@@ -1,23 +1,21 @@
 /*Sergio Truébano Robles*/
 /*
 Colores: 
-(Main: https://www.canva.com/colors/color-palettes/gingerbread-ice-cream/)
-(Sec: https://www.canva.com/colors/color-palettes/stairs-and-mirrors/)
 
 Baby Blue
-#68BBE3
+#E1EEEF
 
-Blue Grotto
-#0E86D4
+Midnight Blue
+#41729F
 
-Blue
-#075997
+Blue Gray
+#5885AF
+
+Dark Blue
+#274472
 
 Navy Blue
 #00264D
-
-Blank
-#FFFFFF
 
 -----
 EXTRA
@@ -25,13 +23,14 @@ EXTRA
 
 Amarillo
 #EFD41F
-
 Morado
 #2D0674
-
+Rojo
+#931515
+Azul neon
+#2D01F4
 Salmon
 #F99F9F
-
 Gris
 #B5B5B5
 
@@ -39,7 +38,7 @@ Gris
 /*Especifidad: 001*/
 body{
     font-family: "Trebuche MS", Verdana, Tahoma, sans-serif ;
-    background-color: #68BBE3;
+    background-color: #E1EEEF;
     color: #000000;
     font-size: 1em;
 }
@@ -60,6 +59,17 @@ img{
     height: auto;
     padding: 1em 5em 2em 2em;
 }
+/*Especifidad: 001*/
+table{
+    padding: 1em;
+}
+/*Especifidad: 001*/
+th{
+    padding: 0.6em 0.6em;
+}
+dt{
+    padding: 0.5em;
+}
 /* Especifidad: 002 */
 tr>th{
     color:#FFFFFF;
@@ -73,7 +83,7 @@ tr>td{
 }
 /* Especifidad: 002 */
 header>h1{
-    font-size: 2.3em;    
+    font-size: 2.8em;   
 } 
 /*Especifidad: 002*/
  header>nav{
@@ -130,4 +140,26 @@ header>nav a:visited{
     /* Color de fondo heredado de body */
     color: #B5B5B5;
 }
+/*Especifidad: 013*/
+body a:link{
+    /* Color de fondo heredado de body */
+    color: #931515;
+}
+/*Especifidad: 013*/
+body a:hover{
+    /* Color de fondo heredado de body */
+    color: #2D01F4;
+}
+/*Especifidad: 013*/
+body a:focus{
+    /* Color de fondo heredado de body */
+    color: #2D01F4;
+}
+/*Especifidad: 013*/
+body a:visited{
+    /* Color de fondo heredado de body */
+    color: #2D0674;
+}
+
+
 

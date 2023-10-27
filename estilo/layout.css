@@ -7,14 +7,14 @@ header{
     align-items: center;
     justify-content: space-evenly;
 }
-/*Especifidad: 003*/
-nav ul>li{
-    list-style-type: none;
-    padding: 0.2em 0.3em;
+/*Especifidad: 002*/
+header>nav {
+    display: flex;
+    padding: 0.6em 0.3em;
 }
 /*Especifidad: 003*/
-header>nav>ul {
-    display: flex;
+header>nav>a {
+    padding: 0.6em 0.3em;
 }
 
 @media (min-width: 50em) {
@@ -23,8 +23,8 @@ header>nav>ul {
         /*Redifinición de dirección de h1 y nav a vertical*/
         flex-direction: row;
     }
-    /*Especifidad: 003*/
-    header>nav>ul {
+    /*Especifidad: 002*/
+    header>nav {
         /*Redifinición de dirección de navegación a horizontal*/
         flex-direction: row;
     }
@@ -35,8 +35,8 @@ header>nav>ul {
         /*Redifinición de dirección de h1 y nav a vertical*/
         flex-direction: column;
     }
-    /*Especifidad: 003*/
-    header>nav>ul {
+    /*Especifidad: 002*/
+    header>nav {
         /*Redifinición de dirección de navegación a vertical*/
         flex-direction: column;
     }
