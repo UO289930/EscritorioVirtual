@@ -1,20 +1,17 @@
 <!ELEMENT rutas (ruta+)>
-<!ELEMENT ruta (tiempo,agencia,descripcionRuta,adecuado,lugarInicio,direccionInicio,coordenadasRuta,referencias,recomendacion,hitos)>
-<!ATTLIST ruta nombreRuta CDATA #REQUIRED>
+<!ELEMENT ruta (nombreRuta,tiempo,agencia,descripcionRuta,adecuado,lugarInicio,direccionInicio,coordenadasRuta,referencias,recomendacion,hitos)>
 <!ATTLIST ruta tipo CDATA #REQUIRED>
 <!ATTLIST ruta medio CDATA #REQUIRED>
 <!ATTLIST ruta fechaInicio CDATA #IMPLIED>
 <!ATTLIST ruta horaInicio CDATA #IMPLIED>
 <!ELEMENT nombreRuta (#PCDATA)>
-<!ELEMENT tipo (#PCDATA)>
-<!ELEMENT medio (#PCDATA)>
 <!ELEMENT tiempo (#PCDATA)>
 <!ELEMENT agencia (#PCDATA)>
 <!ELEMENT descripcionRuta (#PCDATA)>
 <!ELEMENT adecuado (#PCDATA)>
 <!ELEMENT lugarInicio (#PCDATA)>
 <!ELEMENT direccionInicio (#PCDATA)>
-<!ELEMENT coordenadasRuta (#PCDATA)>
+<!ELEMENT coordenadasRuta EMPTY>
 <!ATTLIST coordenadasRuta longitud CDATA #REQUIRED>
 <!ATTLIST coordenadasRuta latitud CDATA #REQUIRED>
 <!ATTLIST coordenadasRuta altitud CDATA #REQUIRED>
@@ -25,7 +22,7 @@
 <!ELEMENT hito (nombreHito,descripcionHito,coordenadasHito,distanciaHitoAnterior,galeriaFotos,galeriaVideos?)>
 <!ELEMENT nombreHito (#PCDATA)>
 <!ELEMENT descripcionHito (#PCDATA)>
-<!ELEMENT coordenadasHito (#PCDATA)>
+<!ELEMENT coordenadasHito EMPTY>
 <!ATTLIST coordenadasHito longitud CDATA #REQUIRED>
 <!ATTLIST coordenadasHito latitud CDATA #REQUIRED>
 <!ATTLIST coordenadasHito altitud CDATA #REQUIRED>
@@ -33,5 +30,5 @@
 <!ATTLIST distanciaHitoAnterior unidades CDATA #REQUIRED>
 <!ELEMENT galeriaFotos (foto+)>
 <!ELEMENT foto (#PCDATA)>
-<!ELEMENT galeriaVideos (video*)>
+<!ELEMENT galeriaVideos (video+)>
 <!ELEMENT video (#PCDATA)>
