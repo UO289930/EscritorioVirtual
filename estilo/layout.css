@@ -3,42 +3,33 @@
 /*Especifidad: 001*/
 header{
     display: flex;
-    flex-wrap: wrap; /*Ayuda en el intervalo que no cubre la media query*/
+    flex-wrap: wrap; 
     align-items: center;
     justify-content: space-evenly;
 }
+
 /*Especifidad: 002*/
 header>nav {
     display: flex;
-    padding: 0.6em 0.3em;
-}
-/*Especifidad: 003*/
-header>nav>a {
-    padding: 0.6em 0.3em;
+    column-gap: 0.5em;
 }
 
-@media (min-width: 50em) {
+@media screen and (max-width: 599px) {
     /*Especifidad: 001*/
     header{
-        /*Redifinición de dirección de h1 y nav a vertical*/
-        flex-direction: row;
+        flex-direction: column;
+        /*Redefinición de flex-wrap:
+            Ya no es necesario ya que la dirección ahora es columna*/
+        flex-wrap: nowrap;
+    } 
+    /*Especifidad: 002*/
+    header>h1 {
+        text-align: center;
     }
     /*Especifidad: 002*/
     header>nav {
-        /*Redifinición de dirección de navegación a horizontal*/
-        flex-direction: row;
-    }
-}
-@media (max-width: 50em) {
-    /*Especifidad: 001*/
-    header{
-        /*Redifinición de dirección de h1 y nav a vertical*/
         flex-direction: column;
-    }
-    /*Especifidad: 002*/
-    header>nav {
-        /*Redifinición de dirección de navegación a vertical*/
-        flex-direction: column;
+        row-gap: 0.5em;
     }
 }
 

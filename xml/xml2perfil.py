@@ -11,6 +11,14 @@ Reutilización de código de Juan Manuel Cueva Lovelle
 
 import xml.etree.ElementTree as ET
 
+FLOOR = 350
+TEXT_FLOOR = FLOOR + 5
+INICIO_X = 15
+ESCALA_X = 25
+ESCALA_Y = 7
+COLOR_FIGURA = 'blue'
+COLOR_CONTORNO = 'red'
+
 def getXPath(archivoXML, expresionXPath):
     """Función verXPath(archivoXML, expresionXPath)
     Retorna el nodo correspondiente de una expresión XPath de un archivo XML
@@ -43,12 +51,17 @@ def getXPath(archivoXML, expresionXPath):
         coordenadas = hijo.attrib
     """
 
-def get_prologo(nombre):
-    return '<?xml version="1.0" encoding="UTF-8" ?>\n<svg xmlns="http://www.w3.org/2000/svg" version="2.0">\n<polyline points=\n\t"10,160\n'
+def get_prologo(archivoXML, numeroRuta):
+    encabezadoConX0 = '<?xml version="1.0" encoding="UTF-8" ?>\n<svg xmlns="http://www.w3.org/2000/svg" version="2.0">\n<polyline points=\n"'+ get_punto(INICIO_X,FLOOR)
+    altitudRuta = getXPath(archivoXML, './ruta['+str(numeroRuta)+']/coordenadasRuta')[0].get('altitud')
+    altitudInicio = get_punto(INICIO_X, FLOOR-float(altitudRuta)*ESCALA_Y)
+    return encabezadoConX0 + altitudInicio
 
 def get_epilogo():
     return '</svg>'
 
+def get_punto(x,y):
+    return '\t' + str(int(x)) + ',' + str(int(y)) + '\n'
 
 def generar_svg_rutas(archivoXML):
     rutas = getXPath(archivoXML,'./ruta')
@@ -56,47 +69,46 @@ def generar_svg_rutas(archivoXML):
     for i in range(1,len(rutas)+1):
         svg_name = 'perfil' + str(i) + '.svg'
         svg = open(svg_name,"w")
-        svg.write(get_prologo(svg_name))
+        svg.write(get_prologo(archivoXML, i))
 
         coordenadasHito = getXPath(archivoXML,'./ruta['+str(i)+']/hitos/hito/coordenadasHito')
-        xAnterior = 10
 
-        textos = ['<text x="10" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">\nInicio\n</text>\n']
+        x = INICIO_X
+
+        lugarInicioTexto = '<text x="'+str(INICIO_X)+'" y="'+str(TEXT_FLOOR)+'" style="writing-mode: tb; glyph-orientation-vertical: 0;">\n'+ getXPath(archivoXML,'./ruta['+str(i)+']/lugarInicio')[0].text +'\n</text>\n'
+        textos = [lugarInicioTexto]
 
         for j in range (len(coordenadasHito)):
 
-            distanciaHitoAnterior = 0
-            if(j!=0):
-                distanciaHitoAnterior = float(getXPath(archivoXML,'./ruta['+str(i)+']/hitos/hito['+str(j+1)+']/distanciaHitoAnterior')[0].text)
-            else:
-                distanciaHitoAnterior = 1
-
-            xAnterior += distanciaHitoAnterior
-            altitud = coordenadasHito[j].get('altitud')
-
+            #distancia a este punto desde el anterior
+            distanciaHitoAnterior = float(getXPath(archivoXML,'./ruta['+str(i)+']/hitos/hito['+str(j+1)+']/distanciaHitoAnterior')[0].text) * ESCALA_X
+            x += distanciaHitoAnterior
+            #altitud de la coordenada
+            y = coordenadasHito[j].get('altitud')
+            
+            #texto de este punto
             texto = '<text x="'
-            texto += str(xAnterior*10)
-            texto +='" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">\n'
+            texto += str(x)
+            texto +='" y="'+str(TEXT_FLOOR)+'" style="writing-mode: tb; glyph-orientation-vertical: 0;">\n'
             texto += getXPath(archivoXML,'./ruta['+str(i)+']/hitos/hito['+str(j+1)+']/nombreHito')[0].text
             texto += '\n</text>\n'
             textos.append(texto)
             
-            svg.write('\t')
-            svg.write(str(xAnterior*10))
-            svg.write(',')
-            svg.write(str(int(160-float(altitud))))
-            svg.write('\n')
+            #punto
+            svg.write(get_punto(x,FLOOR-float(y)*ESCALA_Y))
 
-        svg.write('\t'+str(xAnterior*10+15)+',160\n')
-        svg.write('\t10,160"\nstyle="fill:white;stroke:red;stroke-width:4" />\n')
-        textos.append('<text x="'+str(xAnterior*10+15)+'" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">\nFinal\n</text>\n')
+        # xf
+        svg.write(get_punto(x,FLOOR))
 
+        # retorno a x0
+        svg.write('\t'+str(INICIO_X)+','+str(FLOOR)+'"\nstyle="fill:'+str(COLOR_FIGURA)+';stroke:'+str(COLOR_CONTORNO)+';stroke-width:4" />\n')
+
+        #textos de cada punto
         leyenda = ''.join(textos)
         svg.write(leyenda)
 
         svg.write(get_epilogo())
         svg.close()
-
 
 
 

@@ -49,26 +49,8 @@ header{
 }
 /*Especifidad: 001*/
 video{
-    width: 80%;
+    width: 85%;
     height: auto;
-    padding: 1em 5em 2em 2em;
-}
-/*Especifidad: 001*/
-img{
-    width: 80%;
-    height: auto;
-    padding: 1em 5em 2em 2em;
-}
-/*Especifidad: 001*/
-table{
-    padding: 1em;
-}
-/*Especifidad: 001*/
-th{
-    padding: 0.6em 0.6em;
-}
-dt{
-    padding: 0.5em;
 }
 /* Especifidad: 002 */
 tr>th{
@@ -160,6 +142,3 @@ body a:visited{
     /* Color de fondo heredado de body */
     color: #2D0674;
 }
-
-
-

@@ -2,7 +2,7 @@
 <!DOCTYPE rutas SYSTEM "rutas.dtd">
 <rutas>
     <ruta tipo="Paisajística y gastronómica" medio="A pie">
-        <nombreRuta>Ruta costera</nombreRuta>
+        <nombreRuta>Ruta costera por Pantai Seri Kenangan</nombreRuta>
         <tiempo>1 hora y media</tiempo>
         <agencia>Sin agencia</agencia>
         <descripcionRuta>Ruta costera al norte de Brunéi</descripcionRuta>
@@ -50,13 +50,13 @@
     </ruta>
     <ruta tipo="Arquitectura, monumentos, cultura" medio="A pie o transporte público">
         <nombreRuta>Ruta turística por centro de la capital de Brunéi, Bandar Ser Begawan</nombreRuta>
-        <tiempo>2 horas</tiempo>
+        <tiempo>2 horas y 34 minutos</tiempo>
         <agencia>Sin agencia</agencia>
         <descripcionRuta>Ruta a través del centro de la ciudad donde se podrán observar Jame' Asr Hassanil Bolkiah Mosque, la gran Mezquita del Sultán Omar Ali Saifuddin y por último la pequeña mezquita Balai Ibadat Kampong Saba.</descripcionRuta>
         <adecuado>Se puede ir con niños</adecuado>
-        <lugarInicio>Jame' Asr Hassanil Bolkiah Mosque</lugarInicio>
-        <direccionInicio>Simpang 127, Bandar Seri Begawan, Brunéi</direccionInicio>
-        <coordenadasRuta altitud="50" latitud="4.89795093169754" longitud="114.92168727801855"/>
+        <lugarInicio>UNISSA Main Surau</lugarInicio>
+        <direccionInicio>Bandar Seri Begawan, Brunéi</direccionInicio>
+        <coordenadasRuta altitud="23" latitud="4.904346" longitud="114.913264"/>
         <referencias>
             <referencia>https://id.wikipedia.org/wiki/Jame%27_%27Asr_Hassanil_Bolkiah</referencia>
             <referencia>https://www.visitsoutheastasia.travel/top-sights/jame-asr-hassanil-bolkiah-mosque/</referencia>
@@ -68,7 +68,7 @@
                 <nombreHito>Masjid Jame' Asr Hassanil Bolkiah</nombreHito>
                 <descripcionHito>Mezquita impresionante</descripcionHito>
                 <coordenadasHito altitud="18" latitud="4.89795093169754" longitud="114.92168727801855"/>
-                <distanciaHitoAnterior unidades="km">0</distanciaHitoAnterior>
+                <distanciaHitoAnterior unidades="km">2.2</distanciaHitoAnterior>
                 <galeriaFotos>
                     <foto>MasjidJame.jpg</foto>
                     <foto>MasjidJame2.jpg</foto>
@@ -96,8 +96,8 @@
         </hitos>
     </ruta>
     <ruta tipo="Senderismo/Paisajística" medio="A pie">
-        <nombreRuta>Ruta forestal</nombreRuta>
-        <tiempo>4 horas y 15 minutos</tiempo>
+        <nombreRuta>Ruta forestal con posible visita al parque nacional Lalak Lake</nombreRuta>
+        <tiempo>4 horas y 18 minutos</tiempo>
         <agencia>Sin agencia</agencia>
         <descripcionRuta>Ruta a través de diferentes bosques en Brunéi</descripcionRuta>
         <adecuado>Se puede ir con niños, aunque se pueden cansar</adecuado>
@@ -112,10 +112,10 @@
         <recomendacion>7</recomendacion>
         <hitos>
             <hito>
-                <nombreHito>Kargo Dam</nombreHito>
+                <nombreHito>Tapak Penanaman Pokok</nombreHito>
                 <descripcionHito>Zona rural tranquila</descripcionHito>
-                <coordenadasHito altitud="35" latitud="4.5916878965355155" longitud="114.55407735158468"/>
-                <distanciaHitoAnterior unidades="km">0</distanciaHitoAnterior>
+                <coordenadasHito altitud="26" latitud="4.576614" longitud="114.504061"/>
+                <distanciaHitoAnterior unidades="km">9.1</distanciaHitoAnterior>
                 <galeriaFotos>
                     <foto>KargoDam.jpg</foto>
                 </galeriaFotos>
@@ -124,7 +124,7 @@
                 <nombreHito>Taman Rekreasi Sg.Mau</nombreHito>
                 <descripcionHito>Zona forestal</descripcionHito>
                 <coordenadasHito altitud="15" latitud="4.553491810192945" longitud="114.49034991825599"/>
-                <distanciaHitoAnterior unidades="km">12.2</distanciaHitoAnterior>
+                <distanciaHitoAnterior unidades="km">3.3</distanciaHitoAnterior>
                 <galeriaFotos>
                     <foto>TamanRekreasi.jpg</foto>
                 </galeriaFotos>

@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg xmlns="http://www.w3.org/2000/svg" version="2.0">
 <polyline points=
-	"10,160
-	110,154
-	139.0,150
-	147.5,152
-	162.5,160
-	10,160"
-style="fill:white;stroke:red;stroke-width:4" />
-<text x="10" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
-Inicio
+"	15,350
+	15,280
+	77,308
+	150,280
+	171,294
+	171,350
+	15,350"
+style="fill:blue;stroke:red;stroke-width:4" />
+<text x="15" y="355" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+Pantai Seri Kenangan
 </text>
-<text x="110" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+<text x="77.5" y="355" style="writing-mode: tb; glyph-orientation-vertical: 0;">
 Kampong Penabai, Kuala Tutong Mosque
 </text>
-<text x="139.0" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+<text x="150.0" y="355" style="writing-mode: tb; glyph-orientation-vertical: 0;">
 Istana Pantai
 </text>
-<text x="147.5" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
+<text x="171.25" y="355" style="writing-mode: tb; glyph-orientation-vertical: 0;">
 Fujiwara tofu shop
-</text>
-<text x="162.5" y="165" style="writing-mode: tb; glyph-orientation-vertical: 0;">
-Final
 </text>
 </svg>
