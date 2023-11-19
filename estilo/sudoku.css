@@ -1,0 +1,24 @@
+main>div{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border: 0.1em solid black;
+    width: 23em;
+    height: auto;
+}
+  
+p {
+    padding: 0.7em 0.9em;
+    margin: 0;
+    text-align: center;
+    border: 0.1em solid #4A4A4A;
+}
+
+p[data-state="clicked"]{
+    background-color: #4A4A4A;
+    color: white;
+}
+
+p[data-state="correct"]{
+    background-color: #0D5903;
+    color: white;
+}

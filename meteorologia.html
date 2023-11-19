@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+
+    <!-- link de enlace a javascript -->
+    <script src="js/pais.js"></script>
 </head>
     
 <body>
@@ -35,7 +38,21 @@
     </header>
 
     <!-- Datos con el contenidos que aparece en el navegador -->
-    <p>En desarrollo</p>
+    <main>
+        <!--<article> -->
+            <h2>Meteorología</h2>
+            <script>
+                var pais = new Pais("Brunei", "Begawan", 445.373);
+                pais.completarInformacion("Monarquía absolutista", [4.535277,114.727669], "Religión musulmana");
+
+                document.open();
+                document.write(pais.getInformacionPrincipalHTML());
+                pais.getCoordenadas();
+                document.write(pais.getInformacionSecundariaHTML());
+                document.close();
+            </script>
+        <!--</article> -->
+    </main>
 
 </body>
 </html>

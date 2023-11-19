@@ -33,6 +33,8 @@ Salmon
 #F99F9F
 Gris
 #B5B5B5
+Gris oscuro
+#4A4A4A
 
 */
 /*Especifidad: 001*/
@@ -68,8 +70,13 @@ header>h1{
     font-size: 2.8em;   
 } 
 /*Especifidad: 002*/
- header>nav{
+header>nav{
     font-size: 1.2em;
+}
+/*Especifidad: 002*/
+header>article{
+    font-size: 1.2em;
+    padding: 1em;
 }
 /*Especifidad: 002*/
 body h2{
@@ -103,41 +110,41 @@ section>ul>li:nth-child(3){
     color: #2D0674;
 }
 /*Especifidad: 013*/
-header>nav a:link{
+body header a:link{
     /* Color de fondo heredado de body */
     color: #EFD41F;
 }
 /*Especifidad: 013*/
-header>nav a:hover{
+body header a:hover{
     /* Color de fondo heredado de body */
     color: #F99F9F;
 }
 /*Especifidad: 013*/
-header>nav a:focus{
+body header a:focus{
     /* Color de fondo heredado de body */
     color: #F99F9F;
 }
 /*Especifidad: 013*/
-header>nav a:visited{
+body header a:visited{
     /* Color de fondo heredado de body */
     color: #B5B5B5;
 }
-/*Especifidad: 013*/
+/*Especifidad: 012*/
 body a:link{
     /* Color de fondo heredado de body */
     color: #931515;
 }
-/*Especifidad: 013*/
+/*Especifidad: 012*/
 body a:hover{
     /* Color de fondo heredado de body */
     color: #2D01F4;
 }
-/*Especifidad: 013*/
+/*Especifidad: 012*/
 body a:focus{
     /* Color de fondo heredado de body */
     color: #2D01F4;
 }
-/*Especifidad: 013*/
+/*Especifidad: 012*/
 body a:visited{
     /* Color de fondo heredado de body */
     color: #2D0674;

@@ -1,0 +1,81 @@
+/*
+Colores: 
+
+Baby Blue
+#E1EEEF
+
+Midnight Blue
+#41729F
+
+Blue Gray
+#5885AF
+
+Dark Blue
+#274472
+
+Navy Blue
+#00264D
+
+-----
+EXTRA
+-----
+
+Amarillo
+#EFD41F
+Morado
+#2D0674
+Rojo
+#931515
+Azul neon
+#2D01F4
+Salmon
+#F99F9F
+Gris
+#B5B5B5
+
+*/
+
+main div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+}
+  
+main div article {
+    width: calc(25% - 0.8em);
+    height: 13em;
+    transform: scale(1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+  
+main div article[data-state="flip"],
+main div article[data-state="revealed"] {
+    transform: rotateY(180deg);
+}
+
+main div article h3,
+main div article img {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    border-radius: 0.2em;
+    color: white;
+    background: #125082;
+    backface-visibility: hidden;
+}
+
+main div article h3 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1em;
+}
+
+main div article img {
+    transform: rotateY(180deg);
+}
