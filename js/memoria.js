@@ -87,19 +87,19 @@ class Memoria{
             card.appendChild(heading);
             card.appendChild(img);
 
-            document.querySelector("main>div").appendChild(card);
+            document.querySelector("main").appendChild(card);
         });
     }
 
     addEventListeners(){
-        const articles = document.querySelectorAll('main>div>article');
+        const articles = document.querySelectorAll('main>article');
         articles.forEach( card => {
-            card.addEventListener('click', this.flipCard.bind(card,this))
+            card.addEventListener('click', this.flipCard.bind(card,this));
         });
     }
 
     flipCard(memoria){
-        if(memoria.lockBoard){return}
+        if(memoria.lockBoard){return;}
 
         this.setAttribute("data-state", "flip");
 

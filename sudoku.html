@@ -44,21 +44,19 @@
     </header>
     <main> 
         <h2>Sudoku</h2> 
-        <div id="sudoku">
-            <script>
-                sudoku.paintSudoku();
-                document.addEventListener('keydown', (event) => {
-                    
-                    if (event.key >= '0' && event.key <= '9') {
-                        if(sudoku.getClicked()==null) {
-                            window.alert("Ninguna celda está seleccionada");
-                        } else{
-                            sudoku.introduceNumber(Number(event.key));
-                        }
+        <script>
+            sudoku.paintSudoku();
+            document.addEventListener('keydown', (event) => {
+                
+                if (event.key >= '0' && event.key <= '9') {
+                    if(sudoku.getClicked()==null) {
+                        window.alert("Ninguna celda está seleccionada");
+                    } else{
+                        sudoku.introduceNumber(Number(event.key));
                     }
-                });
-            </script>
-        </div>
+                }
+            });
+        </script>
     </main>
 
 </body>

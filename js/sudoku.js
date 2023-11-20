@@ -72,7 +72,7 @@ class Sudoku{
 
     paintSudoku(){
         const tablero = this.createStructure();
-        const main = document.querySelector("main>div");
+        const main = document.querySelector("main");
         tablero.forEach(celda => {
             main.appendChild(celda);
         });

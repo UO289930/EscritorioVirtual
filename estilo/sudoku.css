@@ -1,9 +1,14 @@
-main>div{
+main{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    border: 0.1em solid black;
+    /* border: 0.1em solid black; */
     width: 23em;
     height: auto;
+}
+
+main > :first-child {
+    display: block; 
+    grid-column: span 9; 
 }
   
 p {
