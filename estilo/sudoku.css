@@ -1,3 +1,4 @@
+/*Especifidades: 001*/
 main{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -5,24 +6,24 @@ main{
     width: 23em;
     height: auto;
 }
-
+/*Especifidades: 011*/
 main > :first-child {
     display: block; 
     grid-column: span 9; 
 }
-  
+/*Especifidades: 001*/  
 p {
     padding: 0.7em 0.9em;
     margin: 0;
     text-align: center;
     border: 0.1em solid #4A4A4A;
 }
-
+/*Especifidades: 011*/
 p[data-state="clicked"]{
     background-color: #4A4A4A;
     color: white;
 }
-
+/*Especifidades: 011*/
 p[data-state="correct"]{
     background-color: #0D5903;
     color: white;

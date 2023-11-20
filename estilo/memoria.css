@@ -34,7 +34,7 @@ Gris
 #B5B5B5
 
 */
-
+/*Especifidad: 001*/
 main {
     display: flex;
     flex-wrap: wrap;
@@ -42,11 +42,11 @@ main {
     align-items: center;
     gap: 0.8em;
 }
-
+/*Especifidad: 011*/
 main > :first-child {
     flex-basis: 100%;
 }
-  
+/*Especifidad: 002*/ 
 main article {
     width: calc(25% - 0.8em);
     height: 13em;
@@ -56,12 +56,12 @@ main article {
     transition: transform .5s;
     box-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,.3);
 }
-  
+/*Especifidades: 012, 012*/
 main article[data-state="flip"],
 main article[data-state="revealed"] {
     transform: rotateY(180deg);
 }
-
+/*Especifidades: 003, 003*/
 main article h3,
 main article img {
     width: 100%;
@@ -72,7 +72,7 @@ main article img {
     background: #125082;
     backface-visibility: hidden;
 }
-
+/*Especifidades: 003*/
 main article h3 {
     display: flex;
     flex-wrap: nowrap;
@@ -80,7 +80,7 @@ main article h3 {
     justify-content: space-around;
     font-size: 1em;
 }
-
-main  article img {
+/*Especifidades: 003*/
+main article img {
     transform: rotateY(180deg);
 }
