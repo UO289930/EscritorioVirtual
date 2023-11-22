@@ -79,6 +79,7 @@ main article h3 {
     align-items: center;
     justify-content: space-around;
     font-size: 1em;
+    margin: 0;
 }
 /*Especifidades: 003*/
 main article img {

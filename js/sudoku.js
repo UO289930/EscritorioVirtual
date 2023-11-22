@@ -6,7 +6,6 @@ class Sudoku{
         this.filas = 9;
         this.columnas = 9;
         this.tablero = new Array();
-        this.seleccionada = null;
         this.eraCorrecta = false;
 
         this.start();
@@ -49,15 +48,16 @@ class Sudoku{
                     celda.setAttribute("data-state", "init");
                     celda.addEventListener("click", () => {
 
-                        if(this.seleccionada!=null && this.eraCorrecta){
-                            this.seleccionada.setAttribute("data-state","correct");
-                        } else if(this.seleccionada!=null){
-                            this.seleccionada.setAttribute("data-state","init");
+                        var seleccionada = document.querySelector('p[data-state="clicked"]')
+
+                        if(seleccionada!=null && this.eraCorrecta){
+                            seleccionada.setAttribute("data-state","correct");
+                        } else if(seleccionada!=null){
+                            seleccionada.setAttribute("data-state","init");
                         }
 
                         this.eraCorrecta = celda.getAttribute("data-state")==="correct";
                         celda.setAttribute("data-state", "clicked");
-                        this.seleccionada = celda;
                     });
                 } else{
                     celda.textContent = valor;
@@ -79,21 +79,31 @@ class Sudoku{
     }
 
     getClicked(){
-        return this.seleccionada;
+        return document.querySelector('p[data-state="clicked"]');
     }
 
     introduceNumber(number){
+        var seleccionada = document.querySelector('p[data-state="clicked"]');
+
         // No hace falta checkear, si está mal no quedará como correcta
-        const fila = Number(this.seleccionada.getAttribute("data-row"));
-        const columna = Number(this.seleccionada.getAttribute("data-column"));
+        const fila = Number(seleccionada.getAttribute("data-row"));
+        const columna = Number(seleccionada.getAttribute("data-column"));
 
         // Fila
-        const reduceFila = this.tablero[fila].filter(elemento => elemento===number).length;
+        const validFila = this.tablero[fila].filter(elemento => elemento===number).length == 0;
         //Columna
-        const reduceColumna = this.tablero.map(fila => fila[columna]).filter(elemento => elemento===number).length;
+        const validColumna = this.tablero.map(fila => fila[columna]).filter(elemento => elemento===number).length == 0;
 
-        if(reduceFila!=0 || reduceColumna!=0){
-            this.resetCell(fila,columna);
+        if(!validFila && !validColumna){
+            window.alert("El número introducido no es correcto para la fila ni la columna correspondiente");
+        } else if(!validFila){
+            window.alert("El número introducido no es correcto para la fila correspondiente");
+        } else if(!validColumna){
+            window.alert("El número introducido no es correcto para la columna correspondiente");
+        }
+
+        if(!validFila || !validColumna){
+            this.#resetCell(fila,columna);
             return;
         }
 
@@ -104,23 +114,33 @@ class Sudoku{
         for(let i=filaInicial; i<filaInicial+3; i++){
             for(let j=columnaInicial; j<columnaInicial+3; j++){
                 if(this.tablero[i][j]===number){
-                    this.resetCell(fila,columna);
+                    window.alert("El número introducido no es correcto para la cuádricula correspondiente");
+                    this.#resetCell(fila,columna);
                     return;
                 }
             }
         }
         
         this.tablero[fila][columna] = number;
-        this.seleccionada.textContent = number;
-        this.seleccionada.setAttribute("data-state", "correct");
-        this.seleccionada = null;
+        seleccionada.textContent = number;
+        seleccionada.setAttribute("data-state", "correct");
+
+        this.#checkFinish();
     }
 
-    resetCell(fila,columna){
+    #resetCell(fila,columna){
+        var seleccionada = document.querySelector('p[data-state="clicked"]')
         this.tablero[fila][columna] = 0;
-        this.seleccionada.setAttribute("data-state", "init");
-        this.seleccionada.textContent = null;
-        this.seleccionada = null;
+        seleccionada.setAttribute("data-state", "init");
+        seleccionada.textContent = null;
+    }
+
+    #checkFinish(){
+        var reduce = this.tablero.filter(celda => celda==0).length;
+
+        if(reduce==0){
+            window.alert("!Enhorabuena¡ El juego ha sido completado");
+        }
     }
 }
 
