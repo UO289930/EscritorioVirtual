@@ -1,0 +1,87 @@
+/*Especifidades: 011*/
+main>article{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+/*Especifidades: 011*/
+main > article > h2 {
+    display: block; 
+    grid-column: span 9; 
+}
+/*Especifidades: 001*/
+p {
+    padding: 0.5em;
+    margin: 0;
+    text-align: center;
+    border: 0.1em solid black;
+}
+/*Especifidades: 011,011*/
+p[data-state="init"],
+p[data-state="blocked"]{
+    /*Color heredado de body*/
+    background-color: white;
+}
+/*Especifidades: 011*/
+p[data-state="empty"]{
+    /*Color heredado de body y aunque es negro y no se vería
+      este componente no tiene texto*/
+    background-color: black;
+}
+/*Especifidades: 011*/
+p[data-state="clicked"]{
+    /*Color heredado de body aunque inicialmente no se ve texto.
+      La casilla puede ser seleccionada con texto si está en estado "correct",
+      pero el color es cambiado a blanco entonces (definidio posteriormente)*/
+    background-color: #4A4A4A;
+}
+/*Especifidades: 011*/
+p[data-state="correct"]{
+    background-color: #0D5903;
+    color: white;
+}
+/*Especifidades: 011*/
+p[data-row="0"]{
+    border-top: 0.3em solid black;
+}
+/*Especifidades: 011*/
+p[data-row="10"]{
+    border-bottom: 0.3em solid black;
+}
+/*Especifidades: 011*/
+p[data-column="0"]{
+    border-left: 0.3em solid black;
+}
+/*Especifidades: 011*/
+p[data-column="8"]{
+    border-right: 0.3em solid black;
+}
+/*Especifidades: 011*/
+section[data-type=botonera]{
+    visibility: hidden;
+}
+
+@media screen and (max-width: 499px){
+    /*Especifidades: 011*/
+    section[data-type=botonera] {
+        display: flex;
+        /*Redefinición para hacer visible la botonera*/
+        visibility: visible;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    /*Especifidades: 012*/
+    section[data-type=botonera] h2 {
+        width: 100%;
+        text-align: center;
+    }
+    /*Especifidades: 012*/
+    section[data-type=botonera] button {
+        width: calc(15% - 1em);
+        height: 4em;
+        text-align: center;
+        background-color: #000;
+        color: #FFF;
+    }
+}

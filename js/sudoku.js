@@ -15,7 +15,7 @@ class Sudoku{
         var i = 0;
         var j = 0;
 
-        this.tablero[i] = new Array();
+        this.tablero[i] = Array();
 
         for (var k=0; k<this.representacionTablero.length; k++) {
             const valor = this.representacionTablero.charAt(k);
@@ -26,7 +26,7 @@ class Sudoku{
             }
 
             if(++j==this.columnas){
-                this.tablero[++i] = new Array();
+                this.tablero[++i] = Array();
                 j = 0;
             }
         }
@@ -34,7 +34,7 @@ class Sudoku{
 
     
     createStructure(){
-        const tablero = new Array();
+        const tablero = Array();
 
         for(var i=0; i<this.filas; i++){
             for(var j=0; j<this.columnas; j++){
@@ -83,11 +83,17 @@ class Sudoku{
     }
 
     introduceNumber(number){
-        var seleccionada = document.querySelector('p[data-state="clicked"]');
+        const seleccionada = document.querySelector('p[data-state="clicked"]');
 
-        // No hace falta checkear, si está mal no quedará como correcta
         const fila = Number(seleccionada.getAttribute("data-row"));
         const columna = Number(seleccionada.getAttribute("data-column"));
+
+        // Si el número estaba en el tablero (se había comprobado que estaba bien)
+        // y se introduce el mismo número, sigue correcto
+        if(this.tablero[fila][columna]===number){
+            seleccionada.setAttribute("data-state", "correct");
+            return;
+        }
 
         // Fila
         const validFila = this.tablero[fila].filter(elemento => elemento===number).length == 0;

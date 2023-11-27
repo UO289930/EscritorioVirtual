@@ -5,17 +5,19 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Información personal sobre el autor de la página Web" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+    <meta name ="description" content ="Meteorología de Brunei" />
+    <meta name ="keywords" content ="meteorología, Brunei, temperatura, humedad" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
-    <title>Escritorio Virtual - Sobre mi</title>
+    <title>Escritorio Virtual - Meteorología</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/meteorologia.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
 
-    <!-- link de enlace a javascript -->
+    <!-- link de enlace a javascript y jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/pais.js"></script>
 </head>
     
@@ -39,19 +41,20 @@
 
     <!-- Datos con el contenidos que aparece en el navegador -->
     <main>
-        <!--<article> -->
-            <h2>Meteorología</h2>
-            <script>
-                var pais = new Pais("Brunei", "Begawan", 445.373);
-                pais.completarInformacion("Monarquía absolutista", [4.535277,114.727669], "Religión musulmana");
-
-                document.open();
+        <h2>Meteorología</h2>
+        <article>
+            <script>      
                 document.write(pais.getInformacionPrincipalHTML());
                 pais.getCoordenadas();
                 document.write(pais.getInformacionSecundariaHTML());
-                document.close();
             </script>
-        <!--</article> -->
+        </article>
+
+        <section>
+            <script>
+                pais.getMeteorologia();
+            </script>
+        </section>
     </main>
 
 </body>

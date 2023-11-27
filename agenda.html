@@ -5,15 +5,20 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Información personal sobre el autor de la página Web" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista de las palabras clave del mismo separadas por comas" />
+    <meta name ="description" content ="Agenda de Fórmula 1" />
+    <meta name ="keywords" content ="agenda, fórmula, f1" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <title>Escritorio Virtual - Agenda</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/agenda.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+
+    <!--Javascript-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/agenda.js"></script>
 </head>
 
 <body>
@@ -29,13 +34,14 @@
             <a href="meteorologia.html" title="Meteorología" accesskey="M" tabindex="5">Meteorología</a>
             <a href="viajes.html" title="Viajes" accesskey="V" tabindex="6">Viajes</a>
             <a href="juegos.html" title="Juegos" accesskey="J" tabindex="7">Juegos</a>
-           
         </nav>
-
     </header>
 
     <!-- Datos con el contenidos que aparece en el navegador -->
-    <p>¡Hola Mundo! Este es el primer sitio web adaptable y accesible desarrollado cumpliendo los estándares HTML5, CSS3. </p>
+    <main>
+        <h2>Agenda</h2>
+        <p><button onclick="agenda.getAgenda()">Obtener agenda de la Fórmula 1</button></p>
+    </main>
 
 </body>
 </html>
