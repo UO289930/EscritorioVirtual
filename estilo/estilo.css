@@ -44,8 +44,9 @@ body{
     color: #000000;
     font-size: 1em;
 }
-/*Especifidad: 001*/
-header{
+/*Especifidad: 001, 011*/
+header,
+section[data-element="menu"]{
     background-color: #00264D;
     color: #FFFFFF;
 }
@@ -109,23 +110,27 @@ section>ul>li:nth-child(3){
     /* Color de fondo heredado de body */
     color: #2D0674;
 }
-/*Especifidad: 013*/
-body header a:link{
+/*Especifidad: 013, 023*/
+body header a:link,
+body section[data-element="menu"] a:link{
     /* Color de fondo heredado de body */
     color: #EFD41F;
 }
-/*Especifidad: 013*/
-body header a:hover{
+/*Especifidad: 013, 023*/
+body header a:hover,
+body section[data-element="menu"] a:hover{
     /* Color de fondo heredado de body */
     color: #F99F9F;
 }
-/*Especifidad: 013*/
-body header a:focus{
+/*Especifidad: 013, 023*/
+body header a:focus,
+body section[data-element="menu"] a:focus{
     /* Color de fondo heredado de body */
     color: #F99F9F;
 }
-/*Especifidad: 013*/
-body header a:visited{
+/*Especifidad: 013, 023*/
+body header a:visited,
+body section[data-element="menu"] a:visited{
     /* Color de fondo heredado de body */
     color: #B5B5B5;
 }

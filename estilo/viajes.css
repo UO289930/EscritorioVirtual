@@ -1,0 +1,16 @@
+/*Especificidad: 012*/
+main article[data-element="mapaPosicion"],
+main article[data-element="mapaRutas"]{
+    height: 50em;
+    width: 80%;
+}
+
+
+@media screen and (max-width: 499px){
+
+    /*Especificidad: 002*/
+    main img{
+        width: 80%;
+        height: auto;
+    }
+}

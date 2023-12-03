@@ -1,0 +1,52 @@
+/*Especificidad 001*/
+main {
+    max-width: 50em; /*Centrado cuando es muy grande la pantalla (>50em)*/
+    margin: auto;
+}
+/*Especificidad 002*/
+main article {
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+}
+main section{
+    border: 0.2em solid black;
+    border-radius: 1em;
+    margin: 1em 0em;
+    padding: 0em 0.4em;
+}
+/*Especificidad 003*/
+main article h3 {
+    color: #0056B3;
+    margin-bottom: 0.5em;
+}
+/*Especificidad 004*/
+main article hgroup p {
+    font-weight: bold;
+}
+/*Especificidad 003*/
+main article p {
+    margin-bottom: 1em;
+}
+/*Especificidad 003*/
+main article cite {
+    font-style: italic;
+    color: black;
+}
+/*Especificidad 003*/
+main article footer {
+    font-size: 0.8em;
+    color: #4A4A4A;
+}
+/*Especificidad 012*/
+main input[data-state="wrong"]{
+    background-color: white;
+    color: black;
+}
+/*Especificidad 012*/
+main input[data-state="wrong"]{
+    background-color: #990F1D;
+    color: white;
+}

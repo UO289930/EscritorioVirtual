@@ -12,7 +12,8 @@ main h2 , main p{
 }
 /*Especificidad 011*/
 article[data-element="carrera"] {
-    padding: 0em 0.5em;
+    max-width: 50em; /*Centrado cuando es muy grande la pantalla (>50em)*/
+    padding: 0em 0.8em;
     border: 0.3em solid black;
     border-radius: 2em;
     /*Color heredado de body*/

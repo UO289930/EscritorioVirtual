@@ -1,15 +1,25 @@
 /*Sergio Truébano Robles*/
 
-/*Especifidad: 001*/
-header{
+/*Especifidad: 001, 011*/
+header, 
+section[data-element="menu"]{
     display: flex;
     flex-wrap: wrap; 
     align-items: center;
     justify-content: space-evenly;
 }
+/*Especifidad: 001*/
+body{
+    margin: 0;
+}
+/*Especifidad: 001, 001*/
+main,
+aside{
+    margin: 1em;
+}
 
-/*Especifidad: 002*/
-header>nav {
+/*Especifidad: 001*/
+nav {
     display: flex;
     column-gap: 0.5em;
 }
@@ -22,12 +32,8 @@ header>nav {
             Ya no es necesario ya que la dirección ahora es columna*/
         flex-wrap: nowrap;
     } 
-    /*Especifidad: 002*/
-    header>h1 {
-        text-align: center;
-    }
-    /*Especifidad: 002*/
-    header>nav {
+    /*Especifidad: 001*/
+    nav {
         flex-direction: column;
         row-gap: 0.5em;
     }

@@ -5,7 +5,7 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Noticias" />
+    <meta name ="description" content ="Noticias sobre diversos temas" />
     <meta name ="keywords" content ="noticia" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <title>Escritorio Virtual - Noticias</title>
@@ -13,7 +13,12 @@
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/noticias.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+
+    <!--Computación-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/noticias.js"></script>
 </head>
     
 <body>
@@ -34,8 +39,42 @@
 
     </header>
     
-    <!-- Datos con el contenidos que aparece en el navegador -->
-    <p>En desarrollo</p>
+    <!-- Datos con el contenido que aparece en el navegador -->
+    <main>
+        <h2>Noticias</h2>
+        <section>
+            <h3>Crear noticias a partir de archivo de texto</h3>
+
+            <p>
+                <input type="file" onchange="noticias.readInputFile(this.files)" title="Seleccionador de archivo de texto" />
+            </p>
+        </section>
+
+        <section data-element="creador">
+            <h3>Crear nueva noticia</h3>
+
+            <p>
+                <label for="titulo">Introduzca el título de la noticia: </label>
+                <input id="titulo" data-element="titulo" data-state="init" type="text" title="Campo para título de noticia" />
+            </p>
+            <p> 
+                <label for="subtitulo">Introduzca el subtítulo de la noticia: </label>
+                <input id="subtitulo" data-element="subtitulo" data-state="init" type="text" title="Campo para subtítulo de noticia" />
+            </p>
+            <p>
+                <label for="texto">Introduzca el texto de la noticia: </label>
+                <input id="texto" data-element="texto" data-state="init" type="text" title="Campo para texto de noticia" />
+            </p>
+            <p>
+                <label for="autor">Introduzca el autor de la noticia: </label>
+                <input id="autor" data-element="autor" data-state="init" type="text" title="Campo para autor de noticia" />
+            </p>
+
+            <p>
+                <button onclick="noticias.addNew()" >Introducir nueva noticia</button>
+            </p>
+        </section>
+    </main>
 
 </body>
 </html>

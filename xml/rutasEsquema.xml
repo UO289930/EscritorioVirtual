@@ -22,8 +22,8 @@
                 <coordenadasHito altitud="6" latitud="4.790276596834284" longitud="114.61899278378765"/>
                 <distanciaHitoAnterior unidades="km">2.5</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>KualaTotongMosque.jpg</foto>
-                    <foto>KualaTotongMosque2.jpg</foto>
+                    <foto>xml/KualaTotongMosque.jpg</foto>
+                    <foto>xml/KualaTotongMosque2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -32,8 +32,8 @@
                 <coordenadasHito altitud="10" latitud="4.807468110763295" longitud="114.63856073741455"/>
                 <distanciaHitoAnterior unidades="km">2.9</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>IstanaPantai.jpg</foto>
-                    <foto>IstanaPantai2.jpg</foto>
+                    <foto>xml/IstanaPantai.jpg</foto>
+                    <foto>xml/IstanaPantai2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -42,7 +42,7 @@
                 <coordenadasHito altitud="8" latitud="4.804738014211636" longitud="114.64495983293868"/>
                 <distanciaHitoAnterior unidades="km">0.85</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>fujiwara.jpg</foto>
+                    <foto>xml/fujiwara.jpg</foto>
                 </galeriaFotos>
             </hito>
         </hitos>
@@ -69,8 +69,8 @@
                 <coordenadasHito altitud="18" latitud="4.89795093169754" longitud="114.92168727801855"/>
                 <distanciaHitoAnterior unidades="km">2.2</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>MasjidJame.jpg</foto>
-                    <foto>MasjidJame2.jpg</foto>
+                    <foto>xml/MasjidJame.jpg</foto>
+                    <foto>xml/MasjidJame2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -79,8 +79,8 @@
                 <coordenadasHito altitud="7" latitud="4.889449185213048" longitud="114.93923818155807"/>
                 <distanciaHitoAnterior unidades="km">3.3</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>SultanOmarAli.jpg</foto>
-                    <foto>SultanOmarAli2.jpg</foto>
+                    <foto>xml/SultanOmarAli.jpg</foto>
+                    <foto>xml/SultanOmarAli2.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -89,7 +89,7 @@
                 <coordenadasHito altitud="29" latitud="4.901602526126973" longitud="114.94441376981506"/>
                 <distanciaHitoAnterior unidades="km">5.5</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>BalaiIbadat.jpg</foto>
+                    <foto>xml/BalaiIbadat.jpg</foto>
                 </galeriaFotos>
             </hito>
         </hitos>
@@ -116,7 +116,7 @@
                 <coordenadasHito altitud="26" latitud="4.576614" longitud="114.504061"/>
                 <distanciaHitoAnterior unidades="km">9.1</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>KargoDam.jpg</foto>
+                    <foto>xml/KargoDam.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -125,7 +125,7 @@
                 <coordenadasHito altitud="15" latitud="4.553491810192945" longitud="114.49034991825599"/>
                 <distanciaHitoAnterior unidades="km">3.3</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>TamanRekreasi.jpg</foto>
+                    <foto>xml/TamanRekreasi.jpg</foto>
                 </galeriaFotos>
             </hito>
             <hito>
@@ -134,8 +134,8 @@
                 <coordenadasHito altitud="9" latitud="4.515360715730574" longitud="114.47529147481819"/>
                 <distanciaHitoAnterior unidades="km">6.6</distanciaHitoAnterior>
                 <galeriaFotos>
-                    <foto>LalakLake.jpg</foto>
-                    <foto>LalakLake2.jpg</foto>
+                    <foto>xml/LalakLake.jpg</foto>
+                    <foto>xml/LalakLake2.jpg</foto>
                 </galeriaFotos>
             </hito>
         </hitos>

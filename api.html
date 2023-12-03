@@ -5,18 +5,20 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Juego de memoria basado en realizar parejas de cartas" />
-    <meta name ="keywords" content ="juego,memoria" />
+    <meta name ="description" content ="Reproductor MP3 de audio" />
+    <meta name ="keywords" content ="api,html5,reproductor,audio" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
-    <title>Escritorio Virtual - Juego de memoria</title>
+    <title>Escritorio Virtual - Reproductor</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/memoria.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/api.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
 
-    <script src="js/memoria.js"></script>
+    <!--Javascript-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
 </head>
 
 <body>
@@ -41,17 +43,21 @@
             <a href="memoria.html" title="Juego de memoria" accesskey="U" tabindex="8">Juego de memoria</a>
             <a href="sudoku.html" title="Sudoku" accesskey="D" tabindex="9">Sudoku</a> 
             <a href="crucigrama.html" title="Crucigrama" accesskey="C" tabindex="10">Crucigrama matemático</a>
-            <a href="api.html" title="Reproductor" accesskey="R" tabindex="11">Reproductor de música</a>
+            <a href="api.html" title="Reproductor MP3" accesskey="R" tabindex="11">Reproductor de música</a>
         </nav>
     </section>
 
-    <main>  
-        <h2>Juego de memoria</h2>
-        <script>
-            new Memoria();
-        </script>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <main>
+        <h2>Reproductor de música</h2>
+        <input type="file" multiple>
+        <section data-element="DnD"> <p>Arrastre y suelte archivos de música aquí</p> </section>
+        <section data-element="playlist">
+            <h3>Playlist de música</h3>
+            <ul></ul>
+        </section>
+        <audio controls></audio>
     </main>
-
 
 </body>
 </html>

@@ -1,0 +1,52 @@
+/*Especificidad: 001*/
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*Especificidad: 012*/
+main section[data-element="DnD"]{
+    border: 0.2em dashed #4A4A4A;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+    margin: 1em 0;
+}
+/*Especificidad: 012*/
+main section[data-state="dragover"]{
+    background-color: #4A4A4A;
+    color: white;
+}
+/*Especificidad: 012*/
+main section[data-state="dragleave"]{
+    background-color: white;
+    color: black;
+}
+/*Especificidad: 012*/
+main section[data-state="drop"]{
+    background-color: white;
+    color: black;
+}
+/*Especificidad: 012*/
+main section[data-element="playlist"]{
+    border: 0.2em solid black;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+    margin: 1em 0;
+}
+/*Especificidad: 002*/
+main ul{
+    padding: 1em;
+    margin: 0.8em 0;
+    cursor: pointer;
+}
+/*Especificidad: 003*/
+main ul li{
+    list-style: none;
+    margin: 0.5em 0;
+    padding: 0.5em 0;
+    background-color: #4A4A4A;
+    color: white;
+}

@@ -57,15 +57,14 @@ p[data-column="8"]{
 }
 /*Especifidades: 011*/
 section[data-type=botonera]{
-    visibility: hidden;
+    display: none;
 }
 
 @media screen and (max-width: 499px){
     /*Especifidades: 011*/
     section[data-type=botonera] {
-        display: flex;
         /*Redefinición para hacer visible la botonera*/
-        visibility: visible;
+        display: flex;
         gap: 1em;
         justify-content: center;
         align-items: center;

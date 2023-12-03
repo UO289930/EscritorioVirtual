@@ -13,7 +13,17 @@
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" href="estilo/viajes.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+    <!-- CSS de la API de mapbox-->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" />
+
+    <!-- link de enlace jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--API de mapbox para usar el mapa dinámico-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <!-- link de enlace javascript -->
+    <script src="js/viajes.js"></script>
 </head>
     
 <body>
@@ -36,7 +46,34 @@
     
 
     <!-- Datos con el contenidos que aparece en el navegador -->
-    <p>En desarrollo</p>
+    <main>
+        <h2>Viajes</h2>
+
+        <section data-element="xml">
+            <h3>Mostrar el contenido de archivos XML locales</h3>
+            <p>
+                <label for="xml-in">Selecciona un archivo XML para mostrar su contenido:</label>
+                <input id="xml-in" type="file" onchange="viajes.parseInputFile(this.files);" title="Seleccionador de archivo XML">
+            </p>
+        </section>
+
+        <section data-element="kml">
+            <h3>Mostrar el contenido de varios archivos KML locales</h3>
+            <p>
+                <label for="kml-in">Selecciona varios archivos KML para mostrar su contenido:</label>
+                <input id="kml-in" type="file" onchange="viajes.parseInputKmlFiles(this.files);" title="Seleccionador de archivos KML" multiple>
+            </p>
+        </section>
+
+        <section data-element="svg">
+            <h3>Mostrar el contenido de varios archivos SVG locales</h3>
+            <p>
+                <label for="svg-in">Selecciona varios archivos SVG para mostrar su contenido:</label>
+                <input id="svg-in" type="file" onchange="viajes.parseInputSvgFiles(this.files);" title="Seleccionador de archivos KML" multiple>
+            </p>
+        </section>
+
+    </main>
 
 </body>
 </html>
