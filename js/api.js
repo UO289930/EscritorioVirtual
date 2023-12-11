@@ -35,7 +35,12 @@ class Api{
 
         // Necesito querySelector para poder usar .play()
         const audio = document.querySelector("main audio"); 
-        const playlist = $('main ul');
+        var playlist = $('main ul');
+
+        if(!playlist.length){
+            playlist = $('<ul></ul>');
+            $('main section[data-element="playlist"]').append(playlist);
+        }
 
         for (let i=0; i<files.length; i++) {
             var correct = false;

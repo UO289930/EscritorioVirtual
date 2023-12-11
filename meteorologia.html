@@ -42,19 +42,15 @@
     <!-- Datos con el contenidos que aparece en el navegador -->
     <main>
         <h2>Meteorología</h2>
-        <article>
-            <script>      
-                document.write(pais.getInformacionPrincipalHTML());
-                pais.getCoordenadas();
-                document.write(pais.getInformacionSecundariaHTML());
-            </script>
-        </article>
-
-        <section>
-            <script>
-                pais.getMeteorologia();
-            </script>
-        </section>
+        <script>
+            document.write("<article>");
+            document.write(pais.getInformacionPrincipalHTML());
+            pais.getCoordenadas();
+            document.write(pais.getInformacionSecundariaHTML());
+            document.write("</article>");
+            
+            pais.getMeteorologia();
+        </script>
     </main>
 
 </body>

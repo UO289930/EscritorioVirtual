@@ -9,7 +9,7 @@ main > article > h2 {
     grid-column: span 9; 
 }
 /*Especifidades: 001*/
-p {
+main article[data-element='crucigrama'] p{
     padding: 0.5em;
     margin: 0;
     text-align: center;
@@ -58,6 +58,10 @@ p[data-column="8"]{
 /*Especifidades: 011*/
 section[data-type=botonera]{
     display: none;
+}
+/*Especifidades: 002*/
+main ol{
+    list-style: decimal;
 }
 
 @media screen and (max-width: 499px){

@@ -4,7 +4,7 @@ class Agenda{
     MIN_MINUTES = 10;
 
     constructor(){
-        this.f1APIurl = "http://ergast.com/api/f1/current"
+        this.f1APIurl = "https://ergast.com/api/f1/current"
         this.last_api_call = null;
         this.last_api_result = null;
     }

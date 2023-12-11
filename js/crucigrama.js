@@ -4,10 +4,13 @@ class Crucigrama{
     constructor(){
         // Fácil
         this.board = "4,*,.,=,12,#,#,#,5,#,#,*,#,/,#,#,#,*,4,-,.,=,.,#,15,#,.,*,#,=,#,=,#,/,#,=,.,#,3,#,4,*,.,=,20,=,#,#,#,#,#,=,#,#,8,#,9,-,.,=,3,#,.,#,#,-,#,+,#,#,#,*,6,/,.,=,.,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,6,#,8,*,.,=,16";
+        this.level = "Fácil"
         // Medio
         // this.board = "12,*,.,=,36,#,#,#,15,#,#,*,#,/,#,#,#,*,.,-,.,=,.,#,55,#,.,*,#,=,#,=,#,/,#,=,.,#,15,#,9,*,.,=,45,=,#,#,#,#,#,=,#,#,72,#,20,-,.,=,11,#,.,#,#,-,#,+,#,#,#,*,56,/,.,=,.,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,12,#,16,*,.,=,32";
+        //this.level = "Medio"
         // Difícil
         // this.board = "4,.,.,=,36,#,#,#,25,#,#,*,#,.,#,#,#,.,.,-,.,=,.,#,15,#,.,*,#,=,#,=,#,.,#,=,.,#,18,#,6,*,.,=,30,=,#,#,#,#,#,=,#,#,56,#,9,-,.,=,3,#,.,#,#,*,#,+,#,#,#,*,20,.,.,=,18,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,18,#,24,.,.,=,72";
+        //this.level = "Difícil"
 
         this.filas = 11;
         this.columnas = 9;
@@ -70,7 +73,7 @@ class Crucigrama{
                     celda.attr("data-state", "blocked").text(valor);
                 }
 
-                $("main>article").append(celda);
+                $("main>article[data-element='crucigrama']").append(celda);
             }
         }
 
@@ -196,14 +199,15 @@ class Crucigrama{
         seleccionada.text(element);
         seleccionada.attr("data-state", "correct");
         
-        if(this.check_win_condition()){
+        if(this.#check_win_condition()){
             this.end_time = new Date();
-            window.alert("Se ha completado el crucigrama en un tiempo de " + this.calculate_date_difference() + " (horas:minutos:segundos)");
+            window.alert("Se ha completado el crucigrama en un tiempo de " + this.#calculate_date_difference() + " (horas:minutos:segundos).\n Por favor, rellene el siguiente formulario");
+            this.#createRecordForm();
         }
 
     }
 
-    check_win_condition(){
+    #check_win_condition(){
         var win = true;
 
         for (let index = 0; index < this.filas; index++) {
@@ -213,7 +217,7 @@ class Crucigrama{
         return win;
     }
 
-    calculate_date_difference(){
+    #calculate_date_difference(){
         const milis = this.end_time - this.init_time;
         const horas = Math.floor(milis / 3600000);
         const minutos = Math.floor((milis % 3600000) / 60000);
@@ -222,8 +226,58 @@ class Crucigrama{
         return this.#addZero(horas) + ":" + this.#addZero(minutos) + ":" + this.#addZero(segundos);
     }
 
-    #addZero(valor) {
+    #addZero(valor){
         return valor < 10 ? "0"+valor : valor;
+    }
+
+    #createRecordForm(){
+        
+        const nombre = $("<p></p>").append( $("<label></label>").attr("for", "name").text("Nombre: ") )
+                                   .append( $("<input></input>").attr("type", "text")
+                                                                .attr("id", "name")
+                                                                .attr("name", "name")
+                                                                .attr("placeholder", "Escriba su nombre")
+                                                                .prop("required",true) );
+        const apellido = $("<p></p>").append( $("<label></label>").attr("for", "surname").text("Apellido: "))
+                                     .append( $("<input></input>").attr("type", "text")
+                                                                  .attr("id", "surname")
+                                                                  .attr("name", "surname")
+                                                                  .attr("placeholder", "Escriba su apellido")
+                                                                  .prop("required",true)  );
+        const tiempo = $("<p></p>").append( $("<label></label>").attr("for", "time").text("Tiempo en segundos: ") )
+                                   .append( $("<input></input>").attr("type", "text")
+                                                                .attr("id", "time")
+                                                                .attr("name", "time")
+                                                                .attr("value", Math.floor((this.end_time - this.init_time) / 1000)) // en segundos
+                                                                .prop("readonly",true) )
+        const nivel = $("<p></p>").append( $("<label></label>").attr("for", "level").text("Nivel de dificultad: ") )
+                                  .append( $("<input></input>").attr("type", "text")
+                                                               .attr("id", "level")
+                                                               .attr("name", "level")
+                                                               .attr("value", this.level)
+                                                               .prop("readonly",true) )       
+        const enviar =  $("<input></input>").attr("type", "submit")
+                                            .attr("value", "Enviar");
+
+        const form = $("<form></form>").append(nombre)
+                                       .append(apellido)
+                                       .append(tiempo)
+                                       .append(nivel)
+                                       .append(enviar)
+                                       .attr("action", "#")
+                                       .attr("method", "post")
+                                       .attr("name", "record");
+        
+        const h3 = $("<h3></h3>").text("Formulario de partida ganada");
+
+        const section = $("<section></section>").attr("data-element", "form")
+                                                .append(h3)
+                                                .append(form);
+
+        $("main").append(section);
+
+        const target = document.querySelector("main section[data-element='form']");
+        target.scrollIntoView({behavior:'smooth'});
     }
     
 }

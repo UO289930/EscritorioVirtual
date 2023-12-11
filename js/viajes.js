@@ -152,7 +152,7 @@ class Viajes{
 
                 // Fotos al final
                 $.each($("foto", ruta), (j,foto) => {
-                    section.append( $("<img></img>").attr("src", foto.innerHTML ).attr("alt", "Foto " + (j+1) + " relaciaonada con un hito de esta ruta") );
+                    section.append( $("<img></img>").attr("src", foto.innerHTML ).attr("alt", "Foto " + (j+1) + " relacionada con un hito de esta ruta") );
                 });
 
                 // A html   
@@ -173,13 +173,8 @@ class Viajes{
         }
 
         const id = "mapaRutas";
-
-        const containerMapa = $("<article></article>");
-        const h4 = $("<h4></h4>").text("Mapa dínamico con rutas");
         const mapa = $("<article></article>").attr("id", id).attr("data-element", id);
-        containerMapa.append(h4);
-        containerMapa.append(mapa);
-        $('main section[data-element="kml"]').append(containerMapa);
+        $('main section[data-element="kml"]').append(mapa);
 
         this.#crearMapaRutas(files, id);
     }
@@ -255,23 +250,18 @@ class Viajes{
 
     #creaSvgs(files){
 
-        $('main section[data-element="svg"]').remove( $('main section[data-element="svg"] h4') );
-        $('main section[data-element="svg"]').append( $("<h4></h4>").text("Altimetría de las rutas") );
         for(let i=0; i<files.length; i++){
             const lector = new FileReader();
 
             lector.onload = function (evento) { 
 
                 const svgTxt = lector.result;
-                const svg = $("<svg> </svg>").attr("width", "500").attr("height","1000")
-                                             .text("Su navegador no soprta archivos SVG");
+                const svg = $("<svg></svg>").attr("xmlns","http://www.w3.org/2000/svg").attr("version", "1.1");
                 
-                svg.append($("<polyline> </polyline>").attr("points", $("polyline", svgTxt).attr("points"))
-                                                      .attr("style", $("polyline", svgTxt).attr("style")));
+                svg.append($("<polyline></polyline>").attr("points", $("polyline", svgTxt).attr("points")));
                 $.each($("text", svgTxt), (i,text) => {
-                    const newText = $("<text> </text>").attr("x", text.getAttribute("x"))
+                    const newText = $("<text></text>").attr("x", text.getAttribute("x"))
                                                      .attr("y", text.getAttribute("y"))
-                                                     .attr("style", text.getAttribute("style"))
                                                      .text(text.innerHTML);
                     svg.append(newText);                                 
                 });

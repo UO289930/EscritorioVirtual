@@ -52,10 +52,11 @@ class Pais {
         const apikey = "&appid=47b790fd0fc41878c80c57c9846132cb";
         const unidades = "&units=metric";
         const lang = "&lang=es";
-        const urlQuery = "http://api.openweathermap.org/data/2.5/forecast?lat=" + this.coordenadasCapital.latitud + "&lon=" + this.coordenadasCapital.longitud 
+        const urlQuery = "https://api.openweathermap.org/data/2.5/forecast?lat=" + this.coordenadasCapital.latitud + "&lon=" + this.coordenadasCapital.longitud 
                     + lang + unidades + apikey; 
 
-        $("main>section").append($("<h3></h3>").text("Previsión meteorológica en " + pais.nombre));
+        $("main").append( $("<section></section>") );
+        $("main>section").append( $("<h3></h3>").text("Previsión meteorológica en " + pais.nombre) );
 
         $.ajax({
             dataType: "json",
@@ -84,23 +85,23 @@ class Pais {
                         var date = new Date(weatherItem.dt_txt).toLocaleString('es', dateOptions);
                         date = date.charAt(0).toUpperCase() + date.substring(1,date.length);
 
-                        $("main article:last").append($("<h4> </h4>").text(date));
+                        $("main article:last").append($("<h4></h4>").text(date));
 
-                        $("main article:last").append($("<img />")
+                        $("main article:last").append($("<img/>")
                                               .attr("src", iconURL)
                                               .attr("alt", date + " " + weatherItem.weather[0].description));
 
-                        $("main article:last").append($("<ul> </ul>"));
-                        $("main article:last ul").append($("<li> </li>").text("Previsión: "+ weatherItem.weather[0].description));
-                        $("main article:last ul").append($("<li> </li>").text("Temperatura máxima: "+weatherItem.main.temp_max + "°C"));
-                        $("main article:last ul").append($("<li> </li>").text("Temperatura mínima: "+weatherItem.main.temp_min + "°C"));
-                        $("main article:last ul").append($("<li> </li>").text("Humedad: "+weatherItem.main.humidity+"%"));
+                        $("main article:last").append($("<ul></ul>"));
+                        $("main article:last ul").append($("<li></li>").text("Previsión: "+ weatherItem.weather[0].description));
+                        $("main article:last ul").append($("<li></li>").text("Temperatura máxima: "+weatherItem.main.temp_max + "°C"));
+                        $("main article:last ul").append($("<li></li>").text("Temperatura mínima: "+weatherItem.main.temp_min + "°C"));
+                        $("main article:last ul").append($("<li></li>").text("Humedad: "+weatherItem.main.humidity+"%"));
 
                         try{
-                            $("main article:last ul").append($("<li> </li>").text("Cantidad de lluvía: "+weatherItem.rain["3h"] +"mm"));
+                            $("main article:last ul").append($("<li></li>").text("Cantidad de lluvía: "+weatherItem.rain["3h"] +"mm"));
                         }
                         catch(Error){
-                            $("main article:last ul").append($("<li> </li>").text("Cantidad de lluvía: 0mm"));
+                            $("main article:last ul").append($("<li></li>").text("Cantidad de lluvía: 0mm"));
                         }
                     });
                 },

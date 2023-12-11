@@ -4,7 +4,25 @@ main article[data-element="mapaRutas"]{
     height: 50em;
     width: 80%;
 }
+section[data-element="svg"] svg{
+    display: block; /* El depurador del navegador cometaba que con display: inline (predeterminado) podía no funcionar */
+    width: 50em;
+    height: 50em;
+}
 
+section[data-element="svg"] svg polyline{
+    display: block; /* El depurador del navegador cometaba que con display: inline (predeterminado) podía no funcionar */
+    width: 35em;
+    height: 35em;
+    fill:blue;
+    stroke:red;
+    stroke-width:4;
+}
+
+section[data-element="svg"] text{
+    writing-mode: vertical-lr;
+    glyph-orientation-vertical: 0;
+}
 
 @media screen and (max-width: 499px){
 
