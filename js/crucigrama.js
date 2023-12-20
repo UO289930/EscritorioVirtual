@@ -7,12 +7,12 @@ class Crucigrama{
         this.level = "Fácil"
         // Medio
         // this.board = "12,*,.,=,36,#,#,#,15,#,#,*,#,/,#,#,#,*,.,-,.,=,.,#,55,#,.,*,#,=,#,=,#,/,#,=,.,#,15,#,9,*,.,=,45,=,#,#,#,#,#,=,#,#,72,#,20,-,.,=,11,#,.,#,#,-,#,+,#,#,#,*,56,/,.,=,.,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,12,#,16,*,.,=,32";
-        //this.level = "Medio"
+        // this.level = "Medio"
         // Difícil
         // this.board = "4,.,.,=,36,#,#,#,25,#,#,*,#,.,#,#,#,.,.,-,.,=,.,#,15,#,.,*,#,=,#,=,#,.,#,=,.,#,18,#,6,*,.,=,30,=,#,#,#,#,#,=,#,#,56,#,9,-,.,=,3,#,.,#,#,*,#,+,#,#,#,*,20,.,.,=,18,#,#,#,.,#,#,=,#,=,#,#,#,=,#,#,18,#,24,.,.,=,72";
-        //this.level = "Difícil"
+        // this.level = "Difícil"
 
-        this.filas = 11;
+        this.filas = 11;    
         this.columnas = 9;
         this.init_time = null;
         this.end_time = null;
@@ -45,6 +45,16 @@ class Crucigrama{
         }
     }
 
+    manageEvent(event){
+        if (/^[1-9+\-*/]$/.test(event.key)) {
+            if(this.anyCellClicked()) { 
+                window.alert("Ninguna celda está seleccionada");
+            } else{
+                this.introduceElement(event.key);
+            }
+        }
+    }
+
     paintMathword(){
 
         for(var i=0; i<this.filas; i++){
@@ -56,7 +66,7 @@ class Crucigrama{
 
                 if(valor==0){
                     celda.attr("data-state", "init").on("click", () => {
-                        var seleccionada = $('p[data-state="clicked"]')
+                        var seleccionada = $('p[data-state="clicked"]');
             
                         if(seleccionada!=null && this.eraCorrecta){
                             seleccionada.attr("data-state","correct");
@@ -73,7 +83,7 @@ class Crucigrama{
                     celda.attr("data-state", "blocked").text(valor);
                 }
 
-                $("main>article[data-element='crucigrama']").append(celda);
+                $("section[data-element='help']").after(celda);
             }
         }
 
@@ -129,6 +139,18 @@ class Crucigrama{
             expression = this.tablero[fila][columnaDelIgual-2];
             result = this.tablero[fila][columnaDelIgual+1];
 
+            if(/^[1-9]$/.test(expression)){
+                window.alert("No se puede poner un número en el lugar de un símbolo matemático (+,-,/,*)");
+                this.tablero[fila][columna] = 0;
+                return;
+            }
+    
+            if(/^[+\-*/]$/.test(first_number) || /^[+\-*/]$/.test(second_number) || /^[+\-*/]$/.test(result)){
+                window.alert("No se pueden poner símbolos matemáticos en posiciones donde van números");
+                this.tablero[fila][columna] = 0;
+                return;
+            }
+
             // Si todo relleno
             if(first_number!=0 && second_number!=0 && expression!=0 && result!=0 ){
 
@@ -171,6 +193,18 @@ class Crucigrama{
             expression = this.tablero[filaDelIgual-2][columna];
             result = this.tablero[filaDelIgual+1][columna];
 
+            if(/^[1-9]$/.test(expression)){
+                window.alert("No se puede poner un número en el lugar de un símbolo matemático (+,-,/,*)");
+                this.tablero[fila][columna] = 0;
+                return;
+            }
+    
+            if(/^[+\-*/]$/.test(first_number) || /^[+\-*/]$/.test(second_number) || /^[+\-*/]$/.test(result)){
+                window.alert("No se pueden poner símbolos matemáticos en posiciones donde van números");
+                this.tablero[fila][columna] = 0;
+                return;
+            }
+
             // Si todo relleno
             if(first_number!=0 && second_number!=0 && expression!=0 && result!=0 ){
 
@@ -201,7 +235,7 @@ class Crucigrama{
         
         if(this.#check_win_condition()){
             this.end_time = new Date();
-            window.alert("Se ha completado el crucigrama en un tiempo de " + this.#calculate_date_difference() + " (horas:minutos:segundos).\n Por favor, rellene el siguiente formulario");
+            window.alert("Se ha completado el crucigrama en un tiempo de " + this.#calculate_date_difference() + " (horas : minutos : segundos).\n Por favor, rellene el siguiente formulario");
             this.#createRecordForm();
         }
 
@@ -223,7 +257,7 @@ class Crucigrama{
         const minutos = Math.floor((milis % 3600000) / 60000);
         const segundos = Math.floor((milis % 60000) / 1000);
 
-        return this.#addZero(horas) + ":" + this.#addZero(minutos) + ":" + this.#addZero(segundos);
+        return this.#addZero(horas) + " : " + this.#addZero(minutos) + " : " + this.#addZero(segundos);
     }
 
     #addZero(valor){
@@ -249,20 +283,35 @@ class Crucigrama{
                                                                 .attr("id", "time")
                                                                 .attr("name", "time")
                                                                 .attr("value", Math.floor((this.end_time - this.init_time) / 1000)) // en segundos
-                                                                .prop("readonly",true) )
+                                                                .prop("readonly",true) );
         const nivel = $("<p></p>").append( $("<label></label>").attr("for", "level").text("Nivel de dificultad: ") )
                                   .append( $("<input></input>").attr("type", "text")
                                                                .attr("id", "level")
                                                                .attr("name", "level")
                                                                .attr("value", this.level)
-                                                               .prop("readonly",true) )       
+                                                               .prop("readonly",true) );       
+
+        const date = new Date(Date.now());
+        const dia = date.getDate();
+        const mes = date.getMonth() + 1; // ¡Recuerda que los meses comienzan desde 0!
+        const año = date.getFullYear();
+        const horas = date.getHours();
+        const minutos = date.getMinutes();
+        const segundos = date.getSeconds();
+
+        // Campo oculto que manda la hora a la que se creó el formulario         
+        const hora = $("<p></p>").append( $("<label></label>").attr("for", "current_time").text("Día y hora: ") )
+                                  .append( $("<input></input>").attr("name", "current_time")
+                                                                .attr("id", "current_time")
+                                                                .attr("value", dia + "/" + mes + "/" + año + " - " + horas + " : " + minutos + " : " + segundos) );                      
+
         const enviar =  $("<input></input>").attr("type", "submit")
                                             .attr("value", "Enviar");
-
         const form = $("<form></form>").append(nombre)
                                        .append(apellido)
                                        .append(tiempo)
                                        .append(nivel)
+                                       .append(hora)
                                        .append(enviar)
                                        .attr("action", "#")
                                        .attr("method", "post")

@@ -26,8 +26,9 @@ class Fondo{
                 if(data.photos.photo.length==0){
                     return;
                 }
-                //https://live.staticflickr.com/{server-id}/{id}_{secret}_{size-suffix}.jpg
-                // b es 1024 px sin secreto
+                
+                // https://live.staticflickr.com/{server-id}/{id}_{secret}_{size-suffix}.jpg
+                // size_suffix => b es 1024 px
                 var dato = data.photos.photo[Number.parseInt(Math.random()*data.photos.photo.length)];
                 var url = "https://live.staticflickr.com/" + dato.server +"/"+ dato.id +"_"+ dato.secret + "_b.jpg";
 

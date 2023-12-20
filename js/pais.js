@@ -113,7 +113,7 @@ class Pais {
 
 }
 
-const pais = new Pais("Brunei", "Begawan", 445.373);
+const pais = new Pais("Brunéi", "Begawan", 445.373);
 pais.completarInformacion("Monarquía absolutista",
                             {
                                 latitud : 4.247525, 

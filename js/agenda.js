@@ -42,7 +42,7 @@ class Agenda{
 
     getAgenda(){
         
-        const timePast = this.last_api_call == null ? Infinity : ((new Date() - this.last_api_call) / (60000));
+        const timePast = this.last_api_call == null ? Number.MAX_SAFE_INTEGER : ((new Date() - this.last_api_call) / (60000));
         const mostrar = this.mostrarAgenda;
 
         if(timePast >= this.MIN_MINUTES){

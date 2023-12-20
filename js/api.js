@@ -2,22 +2,29 @@
 class Api{
 
     constructor(){
-        this.#prepareDnD();
+        this.#prepareReproducer();
+
+        const remove = this.removeMusic.bind(this);
+        window.addEventListener('error', function (event) {
+            remove();
+            this.window.alert("Las canciones ya no están disponibles");
+            event.preventDefault();
+        }, true);
     }
 
-    #prepareDnD(){
+    #prepareReproducer(){
         window.addEventListener("load", () => {
             const drop = document.querySelector('main section[data-element="DnD"]');
             drop.addEventListener("dragover", (e) => {
                 e.preventDefault();
-                drop.setAttribute("data-state", "dragover")
+                drop.setAttribute("data-state", "dragover");
             });
 
-            drop.addEventListener('dragleave', (e) => {
-                drop.setAttribute("data-state", "dragleave")
+            drop.addEventListener("dragleave", (e) => {
+                drop.setAttribute("data-state", "dragleave");
             });
 
-            drop.addEventListener('drop', (e) => {
+            drop.addEventListener("drop", (e) => {
                 e.preventDefault();
                 drop.setAttribute("data-state", "drag-over");
                 this.#addFiles(e.dataTransfer.files);
@@ -27,20 +34,27 @@ class Api{
             input.addEventListener("change", (e) => {
                 this.#addFiles(e.target.files);
             });
+
+            // Añade canciones ya guardadas
+            this.#addSongsInStorage();
         });
     }
 
+    #addSongsInStorage(){
+        const songs = JSON.parse(localStorage.getItem('playlist')) || [];
+        
+        songs.forEach(song => {
+            this.#addSongToPlaylist(song["name"], song["url"], true);
+        });
+    }
+
+    removeMusic(){
+        localStorage.removeItem("playlist");
+        $("main section[data-element='playlist'] li").remove();
+    }
+
     #addFiles(files){
-        const audioExtensions = ['.mp3', '.wav', '.ogg'];
-
-        // Necesito querySelector para poder usar .play()
-        const audio = document.querySelector("main audio"); 
-        var playlist = $('main ul');
-
-        if(!playlist.length){
-            playlist = $('<ul></ul>');
-            $('main section[data-element="playlist"]').append(playlist);
-        }
+        const audioExtensions = [".mp3", ".wav", ".ogg"];
 
         for (let i=0; i<files.length; i++) {
             var correct = false;
@@ -52,31 +66,48 @@ class Api{
                 window.alert("Las únicas extensiones permitidas son: " + audioExtensions);
                 return;
             }
-            
-            const audioUrl = URL.createObjectURL(files[i]);
-            var repeated = false;
 
-            $.each($("main section ul li"), (j,li) => {
-                if(li.textContent===files[i].name){
-                    repeated = true;
-                    return;
+            this.#addSongToPlaylist(files[i].name, URL.createObjectURL(files[i]), false);
+        }
+    }
+
+    #addSongToPlaylist(name, url,  stored){
+
+        const storage = JSON.parse(localStorage.getItem('playlist')) || [];
+        const song = { name: name, url: url };
+        
+        if(!stored){
+            for(let i=0; i<storage.length; i++){
+                if(storage[i]["name"]===song["name"]){
+                    window.alert("La canción " + song["name"] + " ya ha sido añadida previamente");
+                    return false;
                 }
-            } );
-
-            if(repeated){
-                continue;
             }
 
-            const li = document.createElement("li");
-            li.textContent = files[i].name;
-            li.setAttribute("data-url", URL.createObjectURL(files[i]));
-            li.addEventListener("click", (e) => {
-                audio.setAttribute("src", li.getAttribute("data-url"));
-                audio.play();
-            });
-            
-            playlist.append(li);
+            storage.push(song);
+            localStorage.setItem("playlist", JSON.stringify(storage));
         }
+
+        const audio = document.querySelector("main audio");
+        const li = document.createElement("li");
+
+        li.textContent = name;
+        li.setAttribute("data-url", url);
+        li.addEventListener("click", (e) => {
+            audio.setAttribute("src", li.getAttribute("data-url"));
+
+            try{
+                audio.play();
+            } catch(error){
+                localStorage.removeItem("playlist");
+                window.alert("Los archivos ya no existen");
+            }
+        });
+        
+        $('main section[data-element="playlist"] ul').append(li);
+
+        return true;
+        
     }
 }
 

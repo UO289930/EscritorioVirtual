@@ -1,20 +1,19 @@
 <!DOCTYPE HTML>
 
-<html lang="es">
-<head>
+<html lang="es"><head>
     <!-- Datos que describen el documento -->
-    <meta charset="UTF-8" />
-    <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Noticias sobre diversos temas" />
-    <meta name ="keywords" content ="noticia" />
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="author" content="Sergio Truébano Robles">
+    <meta name="description" content="Noticias sobre diversos temas">
+    <meta name="keywords" content="noticias">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritorio Virtual - Noticias</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/noticias.css" />
-    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <link rel="stylesheet" type="text/css" href="estilo/noticias.css">
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <!--Computación-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -23,7 +22,6 @@
     
 <body>
 
-    <!--Cabecera-->
     <header>
         <h1>Escritorio Virtual</h1>
         <nav>
@@ -32,11 +30,9 @@
             <a href="noticias.html" title="Noticias" accesskey="N" tabindex="3">Noticias</a>
             <a href="agenda.html" title="Agenda" accesskey="A" tabindex="4">Agenda</a>
             <a href="meteorologia.html" title="Meteorología" accesskey="M" tabindex="5">Meteorología</a>
-            <a href="viajes.html" title="Viajes" accesskey="V" tabindex="6">Viajes</a>
+            <a href="php/viajes.php" title="Viajes" accesskey="V" tabindex="6">Viajes</a>
             <a href="juegos.html" title="Juegos" accesskey="J" tabindex="7">Juegos</a>
-           
         </nav>
-
     </header>
     
     <!-- Datos con el contenido que aparece en el navegador -->
@@ -46,35 +42,35 @@
             <h3>Crear noticias a partir de archivo de texto</h3>
 
             <p>
-                <input type="file" onchange="noticias.readInputFile(this.files)" title="Seleccionador de archivo de texto" />
+                <input type="file" onchange="noticias.readInputFile(this.files)" title="Seleccionador de archivo de texto">
             </p>
         </section>
 
-        <section data-element="creador">
+        <article> <hgroup> <h3>El aumento de la producción científica desborda de papeleo a la Universidad</h3><p>El Rector promete cambiar el servicio de gestión y contratar personal</p></hgroup><p>A la Universidad de Oviedo le desborda el papeleo por el gran salto dado en investigación</p><footer>Escrito por <cite>Mónica Salas</cite></footer></article><article> <hgroup> <h3>La Universidad presume de equipos deportivos en una jornada ilusionante</h3><p>La presentación tuvo lugar en el polideportivo universitario</p></hgroup><p>Ayer, por primera vez, todos los equipos deportivos de la Universidad de Oviedo realizaron una presentación conjunta</p><footer>Escrito por <cite>Juan Sanchez</cite></footer></article><article> <hgroup> <h3>Investigadores que se van por unos meses al otro lado, a la empresa</h3><p>Deberían hacerlo todos los científicos, afirman un psicólogo y una informática</p></hgroup><p>Una cosa es colaborar con una empresa y otra bien diferente es poder trabajar en ella durante unos meses</p><footer>Escrito por <cite>Manuel Rodriguez</cite></footer></article><article> <hgroup> <h3>Serfd</h3><p>sdfdsgdsfg</p></hgroup><p>sdgdsgsd</p><footer>Escrito por <cite>sdfgsdgsdg</cite></footer></article><section data-element="creador">
             <h3>Crear nueva noticia</h3>
 
             <p>
                 <label for="titulo">Introduzca el título de la noticia: </label>
-                <input id="titulo" data-element="titulo" data-state="init" type="text" title="Campo para título de noticia" />
+                <input id="titulo" data-element="titulo" data-state="init" type="text" title="Campo para título de noticia" tabindex="8">
             </p>
             <p> 
                 <label for="subtitulo">Introduzca el subtítulo de la noticia: </label>
-                <input id="subtitulo" data-element="subtitulo" data-state="init" type="text" title="Campo para subtítulo de noticia" />
+                <input id="subtitulo" data-element="subtitulo" data-state="init" type="text" title="Campo para subtítulo de noticia" tabindex="8">
             </p>
             <p>
                 <label for="texto">Introduzca el texto de la noticia: </label>
-                <input id="texto" data-element="texto" data-state="init" type="text" title="Campo para texto de noticia" />
+                <input id="texto" data-element="texto" data-state="init" type="text" title="Campo para texto de noticia" tabindex="9">
             </p>
             <p>
                 <label for="autor">Introduzca el autor de la noticia: </label>
-                <input id="autor" data-element="autor" data-state="init" type="text" title="Campo para autor de noticia" />
+                <input id="autor" data-element="autor" data-state="init" type="text" title="Campo para autor de noticia" tabindex="10">
             </p>
 
             <p>
-                <button onclick="noticias.addNew()" >Introducir nueva noticia</button>
+                <button onclick="noticias.addNew()" tabindex="11">Introducir nueva noticia</button>
             </p>
         </section>
     </main>
 
-</body>
-</html>
+
+</body></html>

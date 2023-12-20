@@ -1,15 +1,18 @@
-/*Especifidades: 011*/
+/*Sergio Truébano Robles*/
+
+/*Especifidades: 002*/
 main>article{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
 }
-/*Especifidades: 011*/
-main > article > h2 {
+/*Especifidades: 003,012*/
+main > article > h2 ,
+main section[data-element="help"]{
     display: block; 
     grid-column: span 9; 
 }
-/*Especifidades: 001*/
-main article[data-element='crucigrama'] p{
+/*Especifidades: 023*/
+main article[data-element="crucigrama"] p[data-state]{
     padding: 0.5em;
     margin: 0;
     text-align: center;
@@ -18,7 +21,7 @@ main article[data-element='crucigrama'] p{
 /*Especifidades: 011,011*/
 p[data-state="init"],
 p[data-state="blocked"]{
-    /*Color heredado de body*/
+    /*Colores heredados de body*/
     background-color: white;
 }
 /*Especifidades: 011*/
@@ -35,8 +38,8 @@ p[data-state="clicked"]{
     background-color: #4A4A4A;
 }
 /*Especifidades: 011*/
-p[data-state="correct"]{
-    background-color: #0D5903;
+    p[data-state="correct"]{
+    background-color: #004D99;
     color: white;
 }
 /*Especifidades: 011*/
@@ -59,9 +62,9 @@ p[data-column="8"]{
 section[data-type=botonera]{
     display: none;
 }
-/*Especifidades: 002*/
-main ol{
-    list-style: decimal;
+/*Especifidades: 003*/
+main ol li{
+    list-style-type: decimal;
 }
 
 @media screen and (max-width: 499px){

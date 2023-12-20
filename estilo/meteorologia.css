@@ -1,4 +1,6 @@
-/*Especificidad 011*/
+/*Sergio Truébano Robles*/
+
+/*Especificidad 002*/
 main>section{
     display: flex;
     flex-wrap: wrap;
@@ -6,9 +8,11 @@ main>section{
     align-items: center;
     gap: 2em;
 }
+/*Especificidad 003*/
 main>section>h3{
     flex-basis: 100%;
 }
+/*Especificidad 011*/
 article[data-element="meteo"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -19,10 +23,12 @@ article[data-element="meteo"] {
     /*Color heredado de body*/
     background-color: white;
 }
+/*Especificidad 012*/
 article[data-element="meteo"] h4 { 
     display: block;
     grid-column: span 4;
 }
+/*Especificidad 012*/
 article[data-element="meteo"] ul { 
     list-style-type: disc;
     grid-column: span 3;

@@ -1,34 +1,90 @@
-/*Especificidad: 012*/
-main article[data-element="mapaPosicion"],
-main article[data-element="mapaRutas"]{
-    height: 50em;
-    width: 80%;
-}
-section[data-element="svg"] svg{
-    display: block; /* El depurador del navegador cometaba que con display: inline (predeterminado) podía no funcionar */
-    width: 50em;
-    height: 50em;
-}
+/*Sergio Truébano Robles*/
 
-section[data-element="svg"] svg polyline{
+/*Especificidad: 001*/
+main{
+    display: grid;
+    place-items: center;
+}
+/*Especificidad: 011*/
+section[data-element="carrusel"] {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; /* <===  */
+    border-radius: 1em;
+}
+/*Especificidad: 012*/
+section[data-element="carrusel"] img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+/*Especificidad: 012*/
+section[data-element="carrusel"] button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    color: black;
+    background-color: #fff;
+    font-size: 1em;
+}
+/*Especificidad: 022*/
+section[data-element="carrusel"] button:active {
+    transform: scale(1.1);
+}
+/*Especificidad: 022*/
+section[data-element="carrusel"] button[data-action=prev] {
+    top: 50%;
+    left: 2%;
+}
+/*Especificidad: 022*/
+section[data-element="carrusel"] button[data-action=next] {
+    top: 50%;
+    right: 2%;
+}
+/*Especificidad: 011*/
+figure[data-element="mapaPosicion"],
+figure[data-element="mapaRutas"]{
+    height: 50em;
+    width: 100%;
+}
+/*Especificidad: 002*/
+main>article{
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;   
+    position: relative;
+    overflow: hidden;
+}
+/*Especificidad: 002*/
+article>img{ /*Imagen del mapa estático*/ 
+    width: 100%;
+    height: auto;
+}   
+/*Especificidad: 012*/
+section[data-element="svg"] svg{
     display: block; /* El depurador del navegador cometaba que con display: inline (predeterminado) podía no funcionar */
     width: 35em;
     height: 35em;
+}
+/*Especificidad: 013*/
+section[data-element="svg"] svg polyline{
+    display: block; /* El depurador del navegador cometaba que con display: inline (predeterminado) podía no funcionar */
     fill:blue;
     stroke:red;
     stroke-width:4;
 }
-
+/*Especificidad: 012*/
 section[data-element="svg"] text{
     writing-mode: vertical-lr;
-    glyph-orientation-vertical: 0;
-}
-
-@media screen and (max-width: 499px){
-
-    /*Especificidad: 002*/
-    main img{
-        width: 80%;
-        height: auto;
-    }
 }

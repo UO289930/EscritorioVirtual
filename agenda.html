@@ -1,47 +1,47 @@
 <!DOCTYPE HTML>
 
-<html lang="es">
-<head>
+<html lang="es"><head>
     <!-- Datos que describen el documento -->
-    <meta charset="UTF-8" />
-    <meta name ="author" content ="Sergio Truébano Robles" />
-    <meta name ="description" content ="Agenda de Fórmula 1" />
-    <meta name ="keywords" content ="agenda, fórmula, f1" />
-    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="author" content="Sergio Truébano Robles">
+    <meta name="description" content="Agenda de Fórmula 1">
+    <meta name="keywords" content="agenda, fórmula, f1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritorio Virtual - Agenda</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/agenda.css" />
-    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
+    <link rel="stylesheet" type="text/css" href="estilo/agenda.css">
+    <link rel="icon" href="multimedia/imagenes/favicon.ico">
 
     <!--Javascript-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/agenda.js"></script>
 </head>
 
-<body>
+    <body>
 
-    <!--Cabecera-->
-    <header>
-        <h1>Escritorio Virtual</h1>
-        <nav>
-            <a href="index.html" title="Índice" accesskey="I" tabindex="1">Inicio</a>
-            <a href="sobremi.html" title="Sobre mi" accesskey="S" tabindex="2">Sobre mi</a>
-            <a href="noticias.html" title="Noticias" accesskey="N" tabindex="3">Noticias</a>
-            <a href="agenda.html" title="Agenda" accesskey="A" tabindex="4">Agenda</a>
-            <a href="meteorologia.html" title="Meteorología" accesskey="M" tabindex="5">Meteorología</a>
-            <a href="viajes.html" title="Viajes" accesskey="V" tabindex="6">Viajes</a>
-            <a href="juegos.html" title="Juegos" accesskey="J" tabindex="7">Juegos</a>
-        </nav>
-    </header>
+        <header>
+            <h1>Escritorio Virtual</h1>
+            <nav>
+                <a href="index.html" title="Índice" accesskey="I" tabindex="1">Inicio</a>
+                <a href="sobremi.html" title="Sobre mi" accesskey="S" tabindex="2">Sobre mi</a>
+                <a href="noticias.html" title="Noticias" accesskey="N" tabindex="3">Noticias</a>
+                <a href="agenda.html" title="Agenda" accesskey="A" tabindex="4">Agenda</a>
+                <a href="meteorologia.html" title="Meteorología" accesskey="M" tabindex="5">Meteorología</a>
+                <a href="php/viajes.php" title="Viajes" accesskey="V" tabindex="6">Viajes</a>
+                <a href="juegos.html" title="Juegos" accesskey="J" tabindex="7">Juegos</a>
+            </nav>
+        </header>
 
-    <!-- Datos con el contenidos que aparece en el navegador -->
-    <main>
-        <h2>Agenda</h2>
-        <p><button onclick="agenda.getAgenda()">Obtener agenda de la Fórmula 1</button></p>
-    </main>
+            <main>
+                <h2>Agenda</h2>
+                <p>
+                    <label for="agenda">Obtener la agenda de Fórmula 1 del último campeonato:</label>
+                    <button onclick="agenda.getAgenda()" id="agenda" tabindex="8">Mostrar agenda</button>
+                </p>
+            <article data-element="carrera"> <h3>Bahrain Grand Prix</h3><p>Circuito: Bahrain International Circuit</p><p>Coordenadas (latitud, longitud) : 26.0325, 50.5106</p><p>Fecha: 2023-03-05 a las 15:00:00Z</p></article><article data-element="carrera"> <h3>Saudi Arabian Grand Prix</h3><p>Circuito: Jeddah Corniche Circuit</p><p>Coordenadas (latitud, longitud) : 21.6319, 39.1044</p><p>Fecha: 2023-03-19 a las 17:00:00Z</p></article><article data-element="carrera"> <h3>Australian Grand Prix</h3><p>Circuito: Albert Park Grand Prix Circuit</p><p>Coordenadas (latitud, longitud) : -37.8497, 144.968</p><p>Fecha: 2023-04-02 a las 05:00:00Z</p></article><article data-element="carrera"> <h3>Azerbaijan Grand Prix</h3><p>Circuito: Baku City Circuit</p><p>Coordenadas (latitud, longitud) : 40.3725, 49.8533</p><p>Fecha: 2023-04-30 a las 11:00:00Z</p></article><article data-element="carrera"> <h3>Miami Grand Prix</h3><p>Circuito: Miami International Autodrome</p><p>Coordenadas (latitud, longitud) : 25.9581, -80.2389</p><p>Fecha: 2023-05-07 a las 19:30:00Z</p></article><article data-element="carrera"> <h3>Monaco Grand Prix</h3><p>Circuito: Circuit de Monaco</p><p>Coordenadas (latitud, longitud) : 43.7347, 7.42056</p><p>Fecha: 2023-05-28 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Spanish Grand Prix</h3><p>Circuito: Circuit de Barcelona-Catalunya</p><p>Coordenadas (latitud, longitud) : 41.57, 2.26111</p><p>Fecha: 2023-06-04 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Canadian Grand Prix</h3><p>Circuito: Circuit Gilles Villeneuve</p><p>Coordenadas (latitud, longitud) : 45.5, -73.5228</p><p>Fecha: 2023-06-18 a las 18:00:00Z</p></article><article data-element="carrera"> <h3>Austrian Grand Prix</h3><p>Circuito: Red Bull Ring</p><p>Coordenadas (latitud, longitud) : 47.2197, 14.7647</p><p>Fecha: 2023-07-02 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>British Grand Prix</h3><p>Circuito: Silverstone Circuit</p><p>Coordenadas (latitud, longitud) : 52.0786, -1.01694</p><p>Fecha: 2023-07-09 a las 14:00:00Z</p></article><article data-element="carrera"> <h3>Hungarian Grand Prix</h3><p>Circuito: Hungaroring</p><p>Coordenadas (latitud, longitud) : 47.5789, 19.2486</p><p>Fecha: 2023-07-23 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Belgian Grand Prix</h3><p>Circuito: Circuit de Spa-Francorchamps</p><p>Coordenadas (latitud, longitud) : 50.4372, 5.97139</p><p>Fecha: 2023-07-30 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Dutch Grand Prix</h3><p>Circuito: Circuit Park Zandvoort</p><p>Coordenadas (latitud, longitud) : 52.3888, 4.54092</p><p>Fecha: 2023-08-27 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Italian Grand Prix</h3><p>Circuito: Autodromo Nazionale di Monza</p><p>Coordenadas (latitud, longitud) : 45.6156, 9.28111</p><p>Fecha: 2023-09-03 a las 13:00:00Z</p></article><article data-element="carrera"> <h3>Singapore Grand Prix</h3><p>Circuito: Marina Bay Street Circuit</p><p>Coordenadas (latitud, longitud) : 1.2914, 103.864</p><p>Fecha: 2023-09-17 a las 12:00:00Z</p></article><article data-element="carrera"> <h3>Japanese Grand Prix</h3><p>Circuito: Suzuka Circuit</p><p>Coordenadas (latitud, longitud) : 34.8431, 136.541</p><p>Fecha: 2023-09-24 a las 05:00:00Z</p></article><article data-element="carrera"> <h3>Qatar Grand Prix</h3><p>Circuito: Losail International Circuit</p><p>Coordenadas (latitud, longitud) : 25.49, 51.4542</p><p>Fecha: 2023-10-08 a las 17:00:00Z</p></article><article data-element="carrera"> <h3>United States Grand Prix</h3><p>Circuito: Circuit of the Americas</p><p>Coordenadas (latitud, longitud) : 30.1328, -97.6411</p><p>Fecha: 2023-10-22 a las 19:00:00Z</p></article><article data-element="carrera"> <h3>Mexico City Grand Prix</h3><p>Circuito: Autódromo Hermanos Rodríguez</p><p>Coordenadas (latitud, longitud) : 19.4042, -99.0907</p><p>Fecha: 2023-10-29 a las 20:00:00Z</p></article><article data-element="carrera"> <h3>São Paulo Grand Prix</h3><p>Circuito: Autódromo José Carlos Pace</p><p>Coordenadas (latitud, longitud) : -23.7036, -46.6997</p><p>Fecha: 2023-11-05 a las 17:00:00Z</p></article><article data-element="carrera"> <h3>Las Vegas Grand Prix</h3><p>Circuito: Las Vegas Strip Street Circuit</p><p>Coordenadas (latitud, longitud) : 36.1147, -115.173</p><p>Fecha: 2023-11-19 a las 06:00:00Z</p></article><article data-element="carrera"> <h3>Abu Dhabi Grand Prix</h3><p>Circuito: Yas Marina Circuit</p><p>Coordenadas (latitud, longitud) : 24.4672, 54.6031</p><p>Fecha: 2023-11-26 a las 13:00:00Z</p></article></main>
 
-</body>
-</html>
+    
+</body></html>

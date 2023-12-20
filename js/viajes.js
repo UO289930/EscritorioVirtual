@@ -2,22 +2,32 @@
 class Viajes{
 
     constructor(){
-        // navigator.geolocation.getCurrentPosition(funcion exito, funcion error);
         navigator.geolocation.getCurrentPosition(this.#recogePosicion.bind(this), this.#manejarErrores.bind(this));
+
+        $(document).ready(this.#inicializaCarrusel.bind(this));
+    }
+
+    #inicializaCarrusel(){
+        this.images = document.querySelectorAll('section[data-element="carrusel"] img');
+        this.currentImagePosition = this.images.length - 1;
+        this.maxImagePosition = this.images.length - 1;
     }
 
     #recogePosicion(posicion){
-        this.longitud = posicion.coords.longitude; 
+        
+        this.longitud = posicion.coords.longitude;
         this.latitud = posicion.coords.latitude;  
-        // this.precision = posicion.coords.accuracy;
         this.altitud = posicion.coords.altitude;
-        // this.precisionAltitud = posicion.coords.altitudeAccuracy;
+
+        // Esto es para que se puedan añadir más en diferentes momentos, pero no repetidos.
+        this.svgs = [];
 
         this.#crearMapaEstatico();
         this.#crearMapaDinamico();
     }
 
     #manejarErrores(error){
+
         var mensaje = null;
         switch(error.code) {
             case error.PERMISSION_DENIED:
@@ -42,13 +52,14 @@ class Viajes{
     }
 
     #crearMapaEstatico(){
+
         //https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/pin-s+ff0000(-110.7947,37.6535)/-110.7929,37.6549,12,0/500x400?access_token=pk.eyJ1IjoidW8yODk5MzAiLCJhIjoiY2xwancwczF3MDRnMzJqbGI2bnhvaTB4bCJ9.mlFWQ0aSWshJN9dcEBTidg
         const mapBoxAPIUrl = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/"+
                         "pin-s+ff0000("+this.longitud+","+this.latitud+")/"+this.longitud+","+this.latitud+",15,0/500x400?"+
                         "access_token=pk.eyJ1IjoidW8yODk5MzAiLCJhIjoiY2xwancwczF3MDRnMzJqbGI2bnhvaTB4bCJ9.mlFWQ0aSWshJN9dcEBTidg";
         const img = $("<img></img>").attr("src", mapBoxAPIUrl).attr("alt", "Mapa estático de su geolocalización");
 
-        const article = $("<article></article>");
+        const article = $("<article></article>").attr("data-element", "mapa_estatico");
         const h3 = $("<h3></h3>").text("Mapa estático con su posición actual");
         article.append(h3);
         article.append(img);
@@ -57,9 +68,11 @@ class Viajes{
     }
 
     #crearMapaDinamico(){
-        const containerMapa = $("<article></article>");
+
+        const containerMapa = $("<article></article>").attr("data-element", "mapa_dinamico");
         const h3 = $("<h3></h3>").text("Mapa dínamico con su posición actual");
-        const mapa = $("<article></article>").attr("id", "mapaPosicion").attr("data-element","mapaPosicion");
+        const figcaption = $("<figcaption></figcaption>").text("Mapa dinámico de su posición");
+        const mapa = $("<figure></figure>").attr("id", "mapaPosicion").attr("data-element","mapaPosicion");
 
         containerMapa.append(h3);
         containerMapa.append(mapa);
@@ -68,7 +81,7 @@ class Viajes{
         mapboxgl.accessToken = "pk.eyJ1IjoidW8yODk5MzAiLCJhIjoiY2xwancwczF3MDRnMzJqbGI2bnhvaTB4bCJ9.mlFWQ0aSWshJN9dcEBTidg";
         const map = new mapboxgl.Map({
             container: "mapaPosicion", // id
-            style: "mapbox://styles/mapbox/satellite-v9", // estilo URL
+            style: "mapbox://styles/mapbox/satellite-v9", // estilo URL 
             center: [this.longitud, this.latitud], // coordenadas
             zoom: 15, // zoom inicial
         });
@@ -80,9 +93,12 @@ class Viajes{
         .addTo(map);
 
         map.addControl(new mapboxgl.NavigationControl());
+
+        mapa.append(figcaption);
     }
 
     parseInputFile(files){
+
         const archivo = files[0];
         const tipoTexto = "text/xml";
 
@@ -152,7 +168,7 @@ class Viajes{
 
                 // Fotos al final
                 $.each($("foto", ruta), (j,foto) => {
-                    section.append( $("<img></img>").attr("src", foto.innerHTML ).attr("alt", "Foto " + (j+1) + " relacionada con un hito de esta ruta") );
+                    section.append( $("<img></img>").attr("src", "../" + foto.innerHTML ).attr("alt", "Foto " + (j+1) + " relacionada con un hito de esta ruta") );
                 });
 
                 // A html   
@@ -163,7 +179,7 @@ class Viajes{
     }
 
     parseInputKmlFiles(files){
-        // Comprobación de archivos
+        
         const final = ".kml";
         for(let i=0; i<files.length; i++){
             if(!files[i].name.endsWith(final)){
@@ -172,21 +188,25 @@ class Viajes{
             }
         }
 
-        const id = "mapaRutas";
-        const mapa = $("<article></article>").attr("id", id).attr("data-element", id);
-        $('main section[data-element="kml"]').append(mapa);
-
-        this.#crearMapaRutas(files, id);
+        this.#crearMapaRutas(files);
     }
 
-    #crearMapaRutas(files, id){
+    #crearMapaRutas(files){
+
+        const id = "mapaRutas";
+        $('main section[data-element="kml"] article').remove();
+        const mapa = $("<figure></figure>").attr("id", id).attr("data-element", id);
+        $('main section[data-element="kml"]').append(mapa);
+        const figcaption = $("<figcaption></figcaption>").text("Mapa de rutas");
+
+
         //Mapa
         mapboxgl.accessToken = "pk.eyJ1IjoidW8yODk5MzAiLCJhIjoiY2xwancwczF3MDRnMzJqbGI2bnhvaTB4bCJ9.mlFWQ0aSWshJN9dcEBTidg";
         const map = new mapboxgl.Map({
             container: id,                                  // id
             style: "mapbox://styles/mapbox/satellite-v9",   // estilo URL
-            coordenadas : [114.900830, 4.646971],           // long,lat de un punto central a todas las rutas
-            zoom: 10                                        // zoom inicial  
+            center : [114.900830,4.646971],                 // long,lat de un punto central a todas las rutas
+            zoom: 9                                        // zoom inicial  
         });
         map.addControl(new mapboxgl.NavigationControl());
 
@@ -233,14 +253,26 @@ class Viajes{
             };
             lector.readAsText(files[i]);
         }
+
+        mapa.append(figcaption);
     }
 
     parseInputSvgFiles(files){
-        // Comprobación de archivos
+
         const final = ".svg";
         for(let i=0; i<files.length; i++){
             if(!files[i].name.endsWith(final)){
                 window.alert("Todos los archivos deben ser gráficos vectoriales escalables (.svg)");
+                return;
+            }
+            if(this.svgs.includes(files[i].name)){
+
+                if(files.length==1){
+                    window.alert("El archivo " + files[i].name + " ya ha sido añadido previamente y no se permiten archivos repetidos");
+                } else{
+                    window.alert("Al menos el archivo " + files[i].name + " ya ha sido añadido previamente y no se permiten archivos repetidos");
+                }
+
                 return;
             }
         }
@@ -256,22 +288,52 @@ class Viajes{
             lector.onload = function (evento) { 
 
                 const svgTxt = lector.result;
-                const svg = $("<svg></svg>").attr("xmlns","http://www.w3.org/2000/svg").attr("version", "1.1");
-                
-                svg.append($("<polyline></polyline>").attr("points", $("polyline", svgTxt).attr("points")));
-                $.each($("text", svgTxt), (i,text) => {
-                    const newText = $("<text></text>").attr("x", text.getAttribute("x"))
-                                                     .attr("y", text.getAttribute("y"))
-                                                     .text(text.innerHTML);
-                    svg.append(newText);                                 
+
+                var svg = '<svg version="1.1"><polyline points="' + $("polyline", svgTxt).attr("points") + '"></polyline>';
+                $.each($("text", svgTxt), (_,text) => {
+                    svg += "<text ";
+                    svg += 'x="' + text.getAttribute("x");
+                    svg += '" y="' + text.getAttribute("y") + '">';
+                    svg += text.innerHTML;
+                    svg += "</text>";                            
                 });
 
-                $('main section[data-element="svg"]').append(svg);
+                svg += "</svg>";
+
+                $('main section[data-element="svg"]').html( $('main section[data-element="svg"]').html() + svg );
             }
 
             lector.readAsText(files[i]);
+            this.svgs.push(files[i].name);
         }
 
+    }
+
+    nextFoto(){
+
+        // check if current slide is the last and reset current slide
+        this.currentImagePosition = this.currentImagePosition === this.maxImagePosition ? 0 : this.currentImagePosition+1;
+        let current = this.currentImagePosition;
+
+        //   move slide by -100%
+        this.images.forEach((image, indx) => {
+            var trans = 100 * (indx - current);
+            $(image).css('transform', 'translateX(' + trans + '%)')
+        });
+
+        
+    }
+
+    prevFoto(){
+        // check if current slide is the first and reset current slide to last
+        this.currentImagePosition = this.currentImagePosition === 0 ? this.maxImagePosition : this.currentImagePosition-1;
+        let current = this.currentImagePosition;
+
+        //   move slide by 100%
+        this.images.forEach((image, indx) => {
+            var trans = 100 * (indx - current);
+            $(image).css('transform', 'translateX(' + trans + '%)')
+        });
     }
 
 }
