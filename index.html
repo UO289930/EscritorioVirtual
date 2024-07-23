@@ -1,25 +1,26 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
-<html lang="es"><head>
+<html lang="es">
+<head>
     <!-- Datos que describen el documento -->
-    <meta charset="UTF-8">
-    <meta name="author" content="Sergio Truébano Robles">
-    <meta name="description" content="Índice de la página Web">
-    <meta name="keywords" content="index, escritorio virtual">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name ="author" content ="Sergio Truébano Robles" />
+    <meta name ="description" content ="Índice de la página Web" />
+    <meta name ="keywords" content ="index, escritorio virtual" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <title>Escritorio Virtual - Índice</title>
 
     <!-- añadir el elemento link de enlace a la hoja de estilo dentro del <head> del documento html -->
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css">
-    <link rel="icon" href="multimedia/imagenes/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="icon" href="multimedia/imagenes/favicon.ico" />
 
     <!-- link de enlace a javascript y jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/fondo.js"></script>
 </head>
 
-<body style="background-image: url(&quot;https://live.staticflickr.com/3506/3723383842_d5b8b6ca45_b.jpg&quot;); background-size: cover;">
+<body>
 
     <header>
         <h1>Escritorio Virtual</h1>
@@ -34,4 +35,11 @@
         </nav>
     </header>
 
-</body></html>
+    <script>
+        const fondo = new Fondo("Brunei", "Begawan", {latitud : 4.535277, 
+                                                      longitud : 114.727669});
+        fondo.setFondo();
+    </script>
+
+</body>
+</html>

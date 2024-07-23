@@ -5,6 +5,9 @@ class Viajes{
         navigator.geolocation.getCurrentPosition(this.#recogePosicion.bind(this), this.#manejarErrores.bind(this));
 
         $(document).ready(this.#inicializaCarrusel.bind(this));
+
+        // Esto es para que se puedan añadir más en diferentes momentos, pero no repetidos.
+        this.svgs = [];
     }
 
     #inicializaCarrusel(){
@@ -18,9 +21,6 @@ class Viajes{
         this.longitud = posicion.coords.longitude;
         this.latitud = posicion.coords.latitude;  
         this.altitud = posicion.coords.altitude;
-
-        // Esto es para que se puedan añadir más en diferentes momentos, pero no repetidos.
-        this.svgs = [];
 
         this.#crearMapaEstatico();
         this.#crearMapaDinamico();

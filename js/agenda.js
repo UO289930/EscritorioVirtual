@@ -27,7 +27,6 @@ class Agenda{
             const longitud= $("Location", carrera).attr("long");
             const fecha = $("Date:first", carrera).text();
             var hora = $("Time:first", carrera).text();
-            // hora = hora.substring(0,hora.length-1);
 
             $("main").append($("<article> </article>").attr("data-element", "carrera"));
             $("main article:last").append($("<h3> </h3>").text(nombreCarrera));
@@ -43,7 +42,7 @@ class Agenda{
     getAgenda(){
         
         const timePast = this.last_api_call == null ? Number.MAX_SAFE_INTEGER : ((new Date() - this.last_api_call) / (60000));
-        const mostrar = this.mostrarAgenda;
+        const mostrar = this.mostrarAgenda.bind(this);
 
         if(timePast >= this.MIN_MINUTES){
             $.ajax({
@@ -52,8 +51,6 @@ class Agenda{
                 method: 'GET',
                 context: this, // Dentro de la función success de ajax, this no es la instancia de Agenda
                 success: function(datos){
-                    // console.log((new XMLSerializer()).serializeToString(temporada));
-                    
                     this.last_api_call = new Date();
                     this.last_api_result = datos;
                     mostrar(datos);

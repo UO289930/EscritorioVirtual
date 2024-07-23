@@ -293,7 +293,7 @@ class Crucigrama{
 
         const date = new Date(Date.now());
         const dia = date.getDate();
-        const mes = date.getMonth() + 1; // ¡Recuerda que los meses comienzan desde 0!
+        const mes = date.getMonth() + 1;
         const año = date.getFullYear();
         const horas = date.getHours();
         const minutos = date.getMinutes();

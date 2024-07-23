@@ -41,6 +41,7 @@ main article cite {
 }
 /*Especificidad 003*/
 main article footer {
+    /*Color de fondo heredado de article*/
     font-size: 0.8em;
     color: #4A4A4A;
 }
